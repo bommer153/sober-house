@@ -41,9 +41,7 @@ const router = createBrowserRouter([
       { path: "terms", element: <Terms /> },
     ],
   },
-], {
-  basename: "/sober-house"
-});
+]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
