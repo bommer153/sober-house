@@ -3,7 +3,7 @@ import Icon from '../Icon'
 function Testimonials() {
   const testimonials = [
     {
-      name: 'Michael R.',
+      name: 'Jefferson Jalandoon',
       role: 'Resident, 2 years sober',
       content: 'The community here saved my life. The support from other residents and the structured environment gave me the foundation I needed to rebuild my life.',
       avatar: 'michael',
@@ -17,7 +17,7 @@ function Testimonials() {
       rating: 5
     },
     {
-      name: 'David M.',
+      name: 'Ivan Franco',
       role: 'Resident, 1 year sober',
       content: 'The house rules and structure were exactly what I needed. I\'ve learned so much about responsibility and building healthy relationships.',
       avatar: 'david',
@@ -89,7 +89,7 @@ function Testimonials() {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-3xl p-8 lg:p-12 text-white text-center">
+        {/* <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-3xl p-8 lg:p-12 text-white text-center">
           <h3 className="text-2xl md:text-3xl font-bold mb-8">
             Our Impact in Numbers
           </h3>
@@ -123,10 +123,10 @@ function Testimonials() {
               <div className="text-green-100 font-medium">Years Experience</div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Ready to Start Your Recovery Journey?
           </h3>
@@ -147,7 +147,7 @@ function Testimonials() {
               Learn More
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,154 +1,221 @@
-import Icon from '../Icon'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaStar, FaUsers, FaHeart, FaShieldAlt, FaSun, FaHandshake, FaLeaf, FaGraduationCap } from 'react-icons/fa';
 
-function About() {
+const About = () => {
+  const coreValues = [
+    {
+      letter: 'S',
+      title: 'Stability',
+      description: 'We provide a safe, dependable environment where structure supports progress. Stability is the foundation of lasting change.',
+      icon: FaShieldAlt,
+      color: 'blue'
+    },
+    {
+      letter: 'U',
+      title: 'Unity',
+      description: 'We grow stronger together. Our community thrives on teamwork, shared goals, and mutual support—no one gets left behind.',
+      icon: FaUsers,
+      color: 'green'
+    },
+    {
+      letter: 'N',
+      title: 'Nurture',
+      description: 'We create a home filled with compassion and encouragement. Healing happens in spaces where people feel valued, seen, and cared for.',
+      icon: FaHeart,
+      color: 'pink'
+    },
+    {
+      letter: 'S',
+      title: 'Self-Accountability',
+      description: 'We own our actions and choices. Personal responsibility empowers us to grow with integrity and self-respect.',
+      icon: FaHandshake,
+      color: 'purple'
+    },
+    {
+      letter: 'H',
+      title: 'Hope',
+      description: 'We believe that no past defines the future. Hope fuels our journey and reminds us that brighter days are always within reach.',
+      icon: FaSun,
+      color: 'yellow'
+    },
+    {
+      letter: 'I',
+      title: 'Integrity',
+      description: 'We live with honesty and treat others with fairness and respect. Trust is earned and kept through consistent, truthful action.',
+      icon: FaStar,
+      color: 'indigo'
+    },
+    {
+      letter: 'N',
+      title: 'New Beginnings',
+      description: 'Every day is a chance to start again. We embrace fresh starts with open hearts and a willingness to change.',
+      icon: FaLeaf,
+      color: 'emerald'
+    },
+    {
+      letter: 'E',
+      title: 'Empowerment',
+      description: 'We equip every resident with the tools, confidence, and support to build a life they\'re proud of—one sober step at a time.',
+      icon: FaGraduationCap,
+      color: 'orange'
+    }
+  ];
+
+  const getColorClasses = (color) => {
+    const colors = {
+      blue: 'bg-blue-100 text-blue-600',
+      green: 'bg-green-100 text-green-600',
+      pink: 'bg-pink-100 text-pink-600',
+      purple: 'bg-purple-100 text-purple-600',
+      yellow: 'bg-yellow-100 text-yellow-600',
+      indigo: 'bg-indigo-100 text-indigo-600',
+      emerald: 'bg-emerald-100 text-emerald-600',
+      orange: 'bg-orange-100 text-orange-600'
+    };
+    return colors[color] || 'bg-gray-100 text-gray-600';
+  };
+
   return (
-    <section className="py-24 lg:py-32 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Content */}
-          <div>
-            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-6">
-              <Icon name="heart" size="sm" className="mr-2" />
-              About Our Community
+    <section id="about" className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero Section */}
+        <div className="relative bg-cover bg-center bg-no-repeat text-white py-24 lg:py-32 rounded-3xl overflow-hidden mb-20" style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80')`
+        }}>
+          <div className="absolute inset-0" style={{
+            background: 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8))'
+          }}></div>
+          
+          <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
+            <div className="inline-flex items-center bg-white text-gray-900 rounded-full px-6 py-3 mb-8 shadow-lg" style={{
+              animation: 'fadeInUp 0.8s ease-out'
+            }}>
+              <FaStar className="w-5 h-5 text-blue-600 mr-2" />
+              <span className="font-semibold">About Sunshine Sober Living</span>
             </div>
             
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-balance">
-              Building a Strong
-              <span className="block text-blue-600">Recovery Foundation</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight" style={{
+              animation: 'fadeInUp 1s ease-out 0.2s both'
+            }}>
+              We don't just recover—
+              <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+                we shine brighter every day
+              </span>
             </h2>
             
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Our sober living community is built on the principle that recovery works best when individuals 
-              support each other in a structured, drug-free environment. We provide the foundation for lasting 
-              sobriety through peer support, accountability, and personal growth.
+            <p className="text-xl text-blue-100 leading-relaxed" style={{
+              animation: 'fadeInUp 1s ease-out 0.4s both'
+            }}>
+              Grounded in our S.U.N.S.H.I.N.E. values: Stability, Unity, Nurture, Self-Accountability, Hope, Integrity, New Beginnings, and Empowerment.
             </p>
+          </div>
+        </div>
 
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Icon name="users" size="lg" color="blue" />
+        {/* Mission & Vision Section */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-20">
+          <div className="space-y-8" style={{
+            animation: 'fadeInUp 1s ease-out 0.6s both'
+          }}>
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                  <FaShieldAlt className="w-6 h-6 text-blue-600" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Peer-Led Recovery</h3>
-                  <p className="text-gray-600">
-                    Residents take responsibility for house management and support each other, creating a 
-                    powerful community of mutual aid and accountability.
-                  </p>
-                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
               </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Icon name="shield" size="lg" color="green" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Safe Environment</h3>
-                  <p className="text-gray-600">
-                    Our houses provide a structured, drug-free environment with clear rules and guidelines 
-                    to support your recovery journey.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Icon name="target" size="lg" color="purple" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Personal Growth</h3>
-                  <p className="text-gray-600">
-                    Develop life skills, build healthy habits, and create a strong foundation for long-term 
-                    success and independence.
-                  </p>
-                </div>
-              </div>
+              <p className="text-gray-700 leading-relaxed">
+                To create a bright, stable space where individuals healing from addiction can rediscover themselves, rebuild their future, and rise together—guided by structure, self-respect, and the shared belief that everyone deserves a fresh start in the sun.
+              </p>
             </div>
           </div>
-
-          {/* Visual Elements */}
-          <div className="relative">
-            {/* Main Image */}
-            <div className="relative z-10">
-              <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl p-8 text-white text-center shadow-2xl">
-                <div className="w-24 h-24 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Icon name="home" size="2xl" color="white" />
+          
+          <div className="space-y-8" style={{
+            animation: 'fadeInUp 1s ease-out 0.8s both'
+          }}>
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                  <FaUsers className="w-6 h-6 text-green-600" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Recovery Community</h3>
-                <p className="text-blue-100 mb-6">
-                  Join a supportive network of individuals committed to lasting sobriety and personal growth.
-                </p>
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  <div>
-                    <div className="text-2xl font-bold">500+</div>
-                    <div className="text-sm text-blue-100">Lives Changed</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold">95%</div>
-                    <div className="text-sm text-blue-100">Success Rate</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold">24/7</div>
-                    <div className="text-sm text-blue-100">Support</div>
-                  </div>
-                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
               </div>
-            </div>
-
-            {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-32 h-32 bg-green-200 rounded-full opacity-60"></div>
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-purple-200 rounded-full opacity-60"></div>
-            <div className="absolute top-1/2 -left-8 w-16 h-16 bg-yellow-200 rounded-full opacity-60"></div>
-
-            {/* Floating Icons */}
-            <div className="absolute top-8 -right-8 bg-white rounded-2xl p-4 shadow-lg">
-              <Icon name="heart" size="xl" color="red" />
-            </div>
-            <div className="absolute bottom-8 -left-8 bg-white rounded-2xl p-4 shadow-lg">
-              <Icon name="star" size="xl" color="yellow" />
-            </div>
-            <div className="absolute top-1/2 -right-12 bg-white rounded-2xl p-4 shadow-lg">
-              <Icon name="users" size="xl" color="blue" />
+              <p className="text-gray-700 leading-relaxed">
+                We envision a thriving recovery community across Florida where sober living isn't just about staying clean, it's about living fully, freely, and with purpose. Sunshine Sober Living will be known as a safe haven of hope, heart, and healing where transformation happens through consistency, connection, and courage.
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Stats */}
-        <div className="mt-24 grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <Icon name="home" size="xl" color="blue" />
-            </div>
-            <div className="text-3xl font-bold text-gray-900 mb-2">15+</div>
-            <div className="text-gray-600">Houses</div>
-          </div>
-          
-          <div className="text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <Icon name="users" size="xl" color="green" />
-            </div>
-            <div className="text-3xl font-bold text-gray-900 mb-2">200+</div>
-            <div className="text-gray-600">Residents</div>
-          </div>
-          
-          <div className="text-center">
-            <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <Icon name="map-pin" size="xl" color="purple" />
-            </div>
-            <div className="text-3xl font-bold text-gray-900 mb-2">8</div>
-            <div className="text-gray-600">Locations</div>
-          </div>
-          
-          <div className="text-center">
-            <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <Icon name="award" size="xl" color="red" />
-            </div>
-            <div className="text-3xl font-bold text-gray-900 mb-2">10+</div>
-            <div className="text-gray-600">Years</div>
-          </div>
+        {/* S.U.N.S.H.I.N.E. Values Section */}
+        <div className="text-center mb-16" style={{
+          animation: 'fadeInUp 1s ease-out 1s both'
+        }}>
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            S.U.N.S.H.I.N.E. Core Values
+          </h3>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            "We don't just recover—we shine brighter every day."
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {coreValues.map((value, index) => {
+            const IconComponent = value.icon;
+            return (
+              <div 
+                key={value.letter} 
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                style={{
+                  animation: `fadeInUp 1s ease-out ${1.2 + index * 0.1}s both`
+                }}
+              >
+                <div className={`w-16 h-16 ${getColorClasses(value.color)} rounded-full flex items-center justify-center mb-4 mx-auto`}>
+                  <IconComponent className="w-8 h-8" />
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-gray-900 mb-2">{value.letter}</div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">{value.title}</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-white" style={{
+          animation: 'fadeInUp 1s ease-out 2s both'
+        }}>
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+            Take the First Step
+          </h3>
+          <p className="text-xl mb-8 text-blue-100">
+            Whether you're transitioning from treatment or starting over with a clear mind and a hopeful heart, Sunshine is here to walk with you…. one step, one choice, and one day at a time.
+          </p>
+          <Link 
+            to="/contact" 
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-white text-blue-900 hover:bg-gray-100 rounded-full transition-all duration-300 transform hover:scale-105"
+          >
+            Apply Now
+          </Link>
         </div>
       </div>
+      
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </section>
   );
-}
+};
 
 export default About;

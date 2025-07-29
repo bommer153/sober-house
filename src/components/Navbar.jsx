@@ -1,97 +1,141 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import NavLink from './NavLink';
+import logo from '../assets/Logo 6.png';
 
-function Navbar() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
-  const navLinks = [
-    { to: '/', name: 'Home' },
-    { to: '/about', name: 'About Us' },
-    { to: '/how-it-works', name: 'How It Works' },
-    { to: '/how-to-apply', name: 'How to Apply' },
-    { to: '/contact', name: 'Contact' },
-  ];
+  const closeMenu = () => setIsOpen(false);
+
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-white shadow-lg border-b border-gray-200 sticky top-0 z-50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-              <span className="text-white font-bold text-xl">SH</span>
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                Sober House
-              </h1>
-              <p className="text-sm text-gray-500 -mt-1">Recovery Community</p>
+          <Link to="/" className="flex items-center space-x-3" onClick={closeMenu}>
+            <img src={logo} alt="Sunshine Sober Living Florida" className="h-10 w-auto" />
+            <div className="hidden sm:block">
+              <div className="text-xl font-bold text-gray-900">Sunshine Sober Living</div>
+              <div className="text-xs text-gray-600">Florida</div>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <NavLink key={link.to} to={link.to}>
-                {link.name}
-              </NavLink>
-            ))}
+          <div className="hidden lg:flex items-center space-x-8">
+            <NavLink to="/" isActive={isActive('/')} onClick={closeMenu}>
+              Home
+            </NavLink>
+            <NavLink to="/about" isActive={isActive('/about')} onClick={closeMenu}>
+              About
+            </NavLink>
+            <NavLink to="/how-it-works" isActive={isActive('/how-it-works')} onClick={closeMenu}>
+              How It Works
+            </NavLink>
+            <NavLink to="/gallery" isActive={isActive('/gallery')} onClick={closeMenu}>
+              Gallery
+            </NavLink>
+            <NavLink to="/contact" isActive={isActive('/contact')} onClick={closeMenu}>
+              Contact
+            </NavLink>
             <Link
               to="/contact"
-              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-md"
+              onClick={closeMenu}
             >
               Apply Now
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
-              aria-label="Toggle menu"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isMobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 rounded-md text-gray-900 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+          >
+            {isOpen ? (
+              <FaTimes className="w-6 h-6" />
+            ) : (
+              <FaBars className="w-6 h-6" />
+            )}
+          </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4">
-            <div className="space-y-2">
-              {navLinks.map((link) => (
-                <NavLink
-                  key={link.to}
-                  to={link.to}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-base rounded-lg"
-                >
-                  {link.name}
-                </NavLink>
-              ))}
-              <div className="px-4 pt-4">
-                <Link
-                  to="/contact"
-                  className="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Apply Now
-                </Link>
-              </div>
+        {isOpen && (
+          <div className="lg:hidden bg-white shadow-lg rounded-b-2xl border border-gray-200">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <Link
+                to="/"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  isActive('/') 
+                    ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white' 
+                    : 'text-gray-900 hover:bg-gray-100'
+                }`}
+                onClick={closeMenu}
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  isActive('/about') 
+                    ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white' 
+                    : 'text-gray-900 hover:bg-gray-100'
+                }`}
+                onClick={closeMenu}
+              >
+                About
+              </Link>
+              <Link
+                to="/how-it-works"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  isActive('/how-it-works') 
+                    ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white' 
+                    : 'text-gray-900 hover:bg-gray-100'
+                }`}
+                onClick={closeMenu}
+              >
+                How It Works
+              </Link>
+              <Link
+                to="/gallery"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  isActive('/gallery') 
+                    ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white' 
+                    : 'text-gray-900 hover:bg-gray-100'
+                }`}
+                onClick={closeMenu}
+              >
+                Gallery
+              </Link>
+              <Link
+                to="/contact"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  isActive('/contact') 
+                    ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white' 
+                    : 'text-gray-900 hover:bg-gray-100'
+                }`}
+                onClick={closeMenu}
+              >
+                Contact
+              </Link>
+              <Link
+                to="/contact"
+                className="block px-3 py-2 rounded-md text-base font-medium bg-gradient-to-r from-yellow-400 to-orange-500 text-white hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 shadow-md"
+                onClick={closeMenu}
+              >
+                Apply Now
+              </Link>
             </div>
           </div>
         )}
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar; 

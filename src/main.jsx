@@ -13,6 +13,7 @@ import HowToApply from './pages/HowToApply'
 import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
+import Gallery from './pages/Gallery'
 
 function Layout() {
   return (
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
       { path: "how-it-works", element: <HowItWorks /> },
       { path: "how-to-apply", element: <HowToApply /> },
       { path: "contact", element: <Contact /> },
+      { path: "gallery", element: <Gallery /> },
       { path: "privacy", element: <Privacy /> },
       { path: "terms", element: <Terms /> },
     ],

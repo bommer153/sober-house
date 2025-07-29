@@ -226,9 +226,9 @@ function HowToApply() {
                   <div>
                     <h4 className="font-semibold text-blue-900 mb-2">Important Information</h4>
                     <p className="text-sm text-blue-800">
-                      We accept applications from individuals with at least 30 days of continuous sobriety. 
-                      Our houses are self-run by residents, creating a supportive peer environment that promotes 
-                      long-term recovery and personal growth.
+                      We require a minimum of 30 days of sobriety before moving into our sober living residences.
+                      This ensures that all residents are committed to their recovery journey and ready to
+                      participate in our supportive community environment.
                     </p>
                   </div>
                 </div>
@@ -276,15 +276,15 @@ function HowToApply() {
               <h3 className="text-lg font-semibold text-gray-900 mb-3">What if I don't have 30 days of sobriety?</h3>
               <p className="text-gray-600">
                 We can help connect you with detox and treatment programs to help you achieve the required 
-                30 days of sobriety before moving into our houses.
+                30 days of sobriety before moving into our sober living residences.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Can I bring my own furniture?</h3>
               <p className="text-gray-600">
-                Our houses come fully furnished, but you're welcome to bring personal items and small furniture 
-                if space allows. We'll discuss this during your house interview.
+                Our sober living residences come fully furnished, but you're welcome to bring personal items and small furniture
+                to make your space feel more like home. We provide all the essentials you need for comfortable living.
               </p>
             </div>
 

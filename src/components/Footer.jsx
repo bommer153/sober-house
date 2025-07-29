@@ -1,124 +1,128 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import SocialMedia from './SocialMedia';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import logo from '../assets/Logo 6.png';
 
-function Footer() {
+const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
-          <div>
-            <Link to="/" className="flex items-center space-x-3 group mb-6">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center group-hover:bg-blue-700 transition-colors duration-300">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
-              </div>
+          <div className="lg:col-span-1">
+            <Link to="/" onClick={scrollToTop} className="flex items-center space-x-3 mb-6">
+              <img src={logo} alt="Sunshine Sober Living Florida" className="h-12 w-auto" />
               <div>
-                <div className="text-xl font-bold">Sober House</div>
-                <div className="text-sm text-gray-400">Recovery Community</div>
+                <div className="text-xl font-bold">Sunshine Sober Living</div>
+                <div className="text-sm text-gray-400">Florida</div>
               </div>
             </Link>
-            <p className="text-gray-400 text-base leading-relaxed mb-6">
-              A supportive, structured environment for those committed to
-              recovery and building a brighter, healthier future together.
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              A bright, stable space where individuals healing from addiction can rediscover themselves, 
+              rebuild their future, and rise together—guided by structure, self-respect, and the shared 
+              belief that everyone deserves a fresh start in the sun.
             </p>
-            {/* Social Links */}
             <div className="flex space-x-4">
-              <SocialMedia variant="minimal" />
+              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-300">
+                <FaFacebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-300">
+                <FaTwitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-300">
+                <FaInstagram className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white">Quick Links</h4>
+            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              {[
-                { to: '/', name: 'Home' },
-                { to: '/about', name: 'About Us' },
-                { to: '/how-it-works', name: 'How It Works' },
-                { to: '/how-to-apply', name: 'How to Apply' },
-                { to: '/contact', name: 'Contact' },
-              ].map((link) => (
-                <li key={link.to}>
-                  <Link 
-                    to={link.to} 
-                    onClick={scrollToTop}
-                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2 group"
-                  >
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                    <span>{link.name}</span>
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/" onClick={scrollToTop} className="text-gray-400 hover:text-yellow-400 transition-colors duration-300">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" onClick={scrollToTop} className="text-gray-400 hover:text-yellow-400 transition-colors duration-300">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/how-it-works" onClick={scrollToTop} className="text-gray-400 hover:text-yellow-400 transition-colors duration-300">
+                  How It Works
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" onClick={scrollToTop} className="text-gray-400 hover:text-yellow-400 transition-colors duration-300">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" onClick={scrollToTop} className="text-gray-400 hover:text-yellow-400 transition-colors duration-300">
+                  Apply Now
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white">Contact Info</h4>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3 group">
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors duration-300">
-                  <svg className="w-5 h-5 text-blue-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
+            <h3 className="text-lg font-semibold mb-6">Contact Information</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start space-x-3">
+                <FaMapMarkerAlt className="w-5 h-5 text-yellow-400 mt-1 flex-shrink-0" />
                 <div>
-                  <div className="text-white font-semibold mb-1">Address</div>
-                  <div className="text-gray-400 text-sm leading-relaxed">
-                    123 Recovery Street<br />
-                    Sober City, SC 12345
-                  </div>
+                  <p className="text-gray-400">3475 18th Ave South</p>
+                  <p className="text-gray-400">St. Petersburg, FL</p>
                 </div>
-              </div>
-              
-              <div className="flex items-center space-x-3 group">
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">
-                  <svg className="w-5 h-5 text-blue-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-white font-semibold mb-1">Phone</div>
-                  <a href="tel:123-456-7890" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">(123) 456-7890</a>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-3 group">
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">
-                  <svg className="w-5 h-5 text-blue-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-white font-semibold mb-1">Email</div>
-                  <a href="mailto:info@soberhouse.com" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">info@soberhouse.com</a>
-                </div>
-              </div>
+              </li>
+              <li className="flex items-center space-x-3">
+                <FaPhone className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                <span className="text-gray-400">Call us for assistance</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <FaEnvelope className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                <span className="text-gray-400">Send us a message</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* S.U.N.S.H.I.N.E. Values */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">Our Values</h3>
+            <div className="grid grid-cols-2 gap-2 text-sm">
+              <div className="text-gray-400">S - Stability</div>
+              <div className="text-gray-400">U - Unity</div>
+              <div className="text-gray-400">N - Nurture</div>
+              <div className="text-gray-400">S - Self-Accountability</div>
+              <div className="text-gray-400">H - Hope</div>
+              <div className="text-gray-400">I - Integrity</div>
+              <div className="text-gray-400">N - New Beginnings</div>
+              <div className="text-gray-400">E - Empowerment</div>
             </div>
+            <p className="text-xs text-gray-500 mt-4 italic">
+              "We don't just recover—we shine brighter every day."
+            </p>
           </div>
         </div>
 
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Jefferson Jalandoon
-              {/* Sober House. All rights reserved. Made with care for recovery. */}
-            </p>
+            <div className="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2024 Sunshine Sober Living Florida. All rights reserved.
+            </div>
             <div className="flex space-x-6 text-sm">
-              <Link to="/privacy" onClick={scrollToTop} className="text-gray-500 hover:text-white transition-colors duration-300">
+              <Link to="/privacy" onClick={scrollToTop} className="text-gray-400 hover:text-yellow-400 transition-colors duration-300">
                 Privacy Policy
               </Link>
-              <Link to="/terms" onClick={scrollToTop} className="text-gray-500 hover:text-white transition-colors duration-300">
+              <Link to="/terms" onClick={scrollToTop} className="text-gray-400 hover:text-yellow-400 transition-colors duration-300">
                 Terms of Service
               </Link>
             </div>
@@ -127,6 +131,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer; 
