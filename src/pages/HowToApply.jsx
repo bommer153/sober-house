@@ -1,0 +1,305 @@
+import { useState } from 'react';
+import Icon from '../components/Icon';
+import ContactForm from '../components/ContactForm';
+
+function HowToApply() {
+  const [activeStep, setActiveStep] = useState(1);
+
+  const steps = [
+    {
+      number: 1,
+      title: 'Initial Contact',
+      description: 'Reach out to us through phone, email, or our contact form. We\'ll discuss your situation and answer any questions.',
+      icon: 'phone',
+      details: [
+        'Call our 24/7 hotline: (123) 456-7890',
+        'Email us at: info@soberhouse.com',
+        'Fill out our online contact form',
+        'Schedule an initial consultation'
+      ]
+    },
+    {
+      number: 2,
+      title: 'Application Process',
+      description: 'Complete our application form and provide necessary documentation to begin the approval process.',
+      icon: 'file-text',
+      details: [
+        'Complete application form',
+        'Provide proof of sobriety',
+        'Submit personal references',
+        'Background check authorization',
+        'Medical information (if applicable)'
+      ]
+    },
+    {
+      number: 3,
+      title: 'House Interview',
+      description: 'Meet with current residents and house manager to discuss house rules, expectations, and compatibility.',
+      icon: 'users',
+      details: [
+        'Tour the house facilities',
+        'Meet current residents',
+        'Review house rules and guidelines',
+        'Discuss financial arrangements',
+        'Address any concerns or questions'
+      ]
+    },
+    {
+      number: 4,
+      title: 'Approval & Move-in',
+      description: 'Upon approval, coordinate move-in date and begin your recovery journey in our supportive community.',
+      icon: 'check-circle',
+      details: [
+        'Receive approval notification',
+        'Sign house agreement',
+        'Pay security deposit and first month\'s rent',
+        'Schedule move-in date',
+        'Begin orientation process'
+      ]
+    }
+  ];
+
+  const requirements = [
+    {
+      title: 'Sobriety Requirements',
+      items: [
+        'Minimum 30 days of continuous sobriety',
+        'Commitment to maintaining sobriety',
+        'Willingness to participate in recovery activities',
+        'No drug or alcohol use on premises'
+      ]
+    },
+    {
+      title: 'Financial Requirements',
+      items: [
+        'Monthly rent payment (varies by house)',
+        'Security deposit (one month\'s rent)',
+        'Shared utility and household expenses',
+        'Personal expenses (food, transportation, etc.)'
+      ]
+    },
+    {
+      title: 'House Rules',
+      items: [
+        'Attend house meetings regularly',
+        'Participate in household chores',
+        'Respect quiet hours (10 PM - 6 AM)',
+        'No overnight guests without approval',
+        'Maintain clean and organized living space'
+      ]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative bg-cover bg-center bg-no-repeat text-white py-24 lg:py-32 overflow-hidden" style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80')`
+      }}>
+        {/* Gradient overlay */}
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8))'
+        }}></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center bg-white text-gray-900 rounded-full px-6 py-3 mb-8 shadow-lg" style={{
+              animation: 'fadeInUp 0.8s ease-out'
+            }}>
+              <svg className="w-5 h-5 mr-3 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-sm font-semibold">Application Process</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight" style={{
+              animation: 'fadeInUp 1s ease-out 0.2s both'
+            }}>
+              How to Apply for
+              <span className="block bg-gradient-to-r from-blue-300 to-indigo-300 bg-clip-text text-transparent">
+                Sober Living
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed" style={{
+              animation: 'fadeInUp 1s ease-out 0.4s both'
+            }}>
+              Our application process is designed to be straightforward and supportive. 
+              We're here to help you take the next step in your recovery journey.
+            </p>
+          </div>
+        </div>
+        
+        <style jsx>{`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
+      </section>
+
+      {/* Application Steps */}
+      <section className="py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance">
+              Application Process
+            </h2>
+            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-gray-600">
+              Follow these simple steps to join our recovery community and begin your journey to lasting sobriety.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Steps */}
+            <div className="space-y-8">
+              {steps.map((step) => (
+                <div 
+                  key={step.number}
+                  className={`p-6 rounded-2xl border-2 transition-all duration-300 cursor-pointer ${
+                    activeStep === step.number 
+                      ? 'border-blue-500 bg-blue-50' 
+                      : 'border-gray-200 hover:border-blue-300'
+                  }`}
+                  onClick={() => setActiveStep(step.number)}
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${
+                      activeStep === step.number 
+                        ? 'bg-blue-500 text-white' 
+                        : 'bg-gray-100 text-gray-600'
+                    }`}>
+                      <Icon name={step.icon} size="lg" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center mb-2">
+                        <span className="text-sm font-medium text-blue-600 mr-2">Step {step.number}</span>
+                        <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
+                      </div>
+                      <p className="text-gray-600 mb-4">{step.description}</p>
+                      
+                      {activeStep === step.number && (
+                        <ul className="space-y-2">
+                          {step.details.map((detail, index) => (
+                            <li key={index} className="flex items-center text-sm text-gray-700">
+                              <Icon name="check" size="sm" className="text-green-500 mr-2" />
+                              {detail}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Requirements */}
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Requirements & Guidelines</h3>
+              
+              {requirements.map((requirement, index) => (
+                <div key={index} className="bg-gray-50 rounded-2xl p-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">{requirement.title}</h4>
+                  <ul className="space-y-2">
+                    {requirement.items.map((item, idx) => (
+                      <li key={idx} className="flex items-start text-sm text-gray-700">
+                        <Icon name="check" size="sm" className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+
+              {/* Important Note */}
+              <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
+                <div className="flex items-start">
+                  <Icon name="info" size="lg" color="blue" className="mr-3 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-blue-900 mb-2">Important Information</h4>
+                    <p className="text-sm text-blue-800">
+                      We accept applications from individuals with at least 30 days of continuous sobriety. 
+                      Our houses are self-run by residents, creating a supportive peer environment that promotes 
+                      long-term recovery and personal growth.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Application Form */}
+      <section className="py-24 lg:py-32 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance">
+              Ready to Apply?
+            </h2>
+            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-gray-600">
+              Start your application today. Our team will guide you through the process and answer any questions you may have.
+            </p>
+          </div>
+
+          <ContactForm onSubmit={(data) => console.log('Application submitted:', data)} />
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 lg:py-32 bg-white">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-gray-50 rounded-2xl p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">How long does the application process take?</h3>
+              <p className="text-gray-600">
+                The application process typically takes 1-2 weeks from initial contact to move-in. 
+                We work quickly to get you into a supportive environment as soon as possible.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 rounded-2xl p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">What if I don't have 30 days of sobriety?</h3>
+              <p className="text-gray-600">
+                We can help connect you with detox and treatment programs to help you achieve the required 
+                30 days of sobriety before moving into our houses.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 rounded-2xl p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Can I bring my own furniture?</h3>
+              <p className="text-gray-600">
+                Our houses come fully furnished, but you're welcome to bring personal items and small furniture 
+                if space allows. We'll discuss this during your house interview.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 rounded-2xl p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">What happens if I relapse?</h3>
+              <p className="text-gray-600">
+                We have a zero-tolerance policy for drug and alcohol use. If relapse occurs, we'll work with 
+                you to find appropriate treatment and support services.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default HowToApply; 
