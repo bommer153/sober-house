@@ -6,6 +6,7 @@ import App from './App.jsx'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import PerformanceMonitor from './components/PerformanceMonitor'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import About from './pages/About'
 import HowItWorks from './pages/HowItWorks'
@@ -19,6 +20,7 @@ function Layout() {
   return (
     <div className="min-h-screen flex flex-col">
       <PerformanceMonitor />
+      <ScrollToTop />
       <Navbar />
       <main className="flex-grow">
         <App />

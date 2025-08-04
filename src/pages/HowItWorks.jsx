@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaClipboardCheck, FaHome, FaUsers, FaArrowRight, FaWifi, FaCoffee, FaBroom, FaPhone, FaEnvelope, FaMapMarkerAlt, FaExclamationTriangle, FaShieldAlt, FaClock, FaSmokingBan, FaBroom as FaClean, FaBed, FaUserShield, FaCog } from 'react-icons/fa';
+import { FaLeaf, FaWater, FaSun, FaHome, FaHeart, FaClock, FaMapPin, FaUsers, FaShieldAlt, FaStar, FaAward, FaClipboardCheck, FaArrowRight, FaWifi, FaCoffee, FaBroom, FaPhone, FaEnvelope, FaExclamationTriangle, FaSmokingBan, FaBed, FaUserShield, FaCog, FaTree, FaSeedling } from 'react-icons/fa';
 
 const HowItWorks = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
   const steps = [
     {
       number: '1',
@@ -86,7 +91,7 @@ const HowItWorks = () => {
     },
     {
       title: 'CLEANLINESS',
-      icon: FaClean,
+      icon: FaBroom,
       color: 'green',
       rules: [
         'Put trash in the trash can, put dirty dishes in the sink, clean up after you use the bathroom',
@@ -145,47 +150,75 @@ const HowItWorks = () => {
 
   const getColorClasses = (color) => {
     const colors = {
-      blue: 'bg-blue-100 text-blue-600',
-      green: 'bg-green-100 text-green-600',
-      purple: 'bg-purple-100 text-purple-600',
-      orange: 'bg-orange-100 text-orange-600',
-      red: 'bg-red-100 text-red-600',
-      teal: 'bg-teal-100 text-teal-600',
-      indigo: 'bg-indigo-100 text-indigo-600'
+      blue: 'bg-cyan-100/90 text-cyan-700',
+      green: 'bg-emerald-100/90 text-emerald-700',
+      purple: 'bg-purple-100/90 text-purple-700',
+      orange: 'bg-orange-100/90 text-orange-700',
+      red: 'bg-red-100/90 text-red-700',
+      teal: 'bg-teal-100/90 text-teal-700',
+      indigo: 'bg-indigo-100/90 text-indigo-700'
     };
-    return colors[color] || 'bg-gray-100 text-gray-600';
+    return colors[color] || 'bg-gray-100/90 text-gray-700';
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center bg-no-repeat text-white py-24 lg:py-32 overflow-hidden" style={{
-        backgroundImage: `url('https://www.verywellmind.com/thmb/WNq51DfMe3JcNcMHI8cDJmXcxKM=/2116x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1363234587-7ea62be7ed994c868757366bae9201f9.jpg')`
+      <section className="relative bg-cover bg-center bg-no-repeat text-white h-screen flex items-center justify-center overflow-hidden" style={{
+        backgroundImage: `url('/assets/Gallery SSL 3.jpg')`
       }}>
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8))'
-        }}></div>
+        {/* Tropical overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/70 via-emerald-500/50 to-orange-400/60"></div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Floating tropical elements */}
+        <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-400/30 rounded-full animate-bounce"></div>
+        <div className="absolute top-20 right-20 w-16 h-16 bg-orange-400/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-cyan-400/30 rounded-full animate-bounce" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/3 right-1/3 w-14 h-14 bg-yellow-400/30 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute bottom-1/3 right-1/4 w-18 h-18 bg-pink-400/30 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }}></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center bg-white text-gray-900 rounded-full px-6 py-3 mb-8 shadow-lg" style={{
-              animation: 'fadeInUp 0.8s ease-out'
-            }}>
-              <FaClipboardCheck className="w-5 h-5 text-green-600 mr-2" />
-              <span className="font-semibold">How Sunshine Sober Living Works</span>
+            {/* Badge */}
+            <div className={`inline-flex items-center bg-white/40 backdrop-blur-lg text-cyan-800 rounded-full px-6 py-3 mb-8 shadow-2xl border border-white/60 relative overflow-hidden transition-all duration-1000 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}>
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/25 via-transparent to-white/10 rounded-full"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              <div className="relative z-10 flex items-center">
+                <FaLeaf className="w-5 h-5 mr-3 text-emerald-600 animate-pulse" />
+                <FaTree className="w-4 h-4 mr-2 text-emerald-500" />
+                <span className="text-sm font-bold text-gray-900" style={{
+                  textShadow: '0 1px 2px rgba(255, 255, 255, 0.9)',
+                  fontFamily: 'Source Sans Pro, sans-serif',
+                  fontWeight: '700',
+                  letterSpacing: '0.05em'
+                }}>Trusted by 500+ individuals in recovery</span>
+              </div>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight" style={{
-              animation: 'fadeInUp 1s ease-out 0.2s both'
+            {/* Main Heading */}
+            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+              fontFamily: 'Playfair Display, serif',
+              fontWeight: '800'
             }}>
               Your Journey to
-              <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+              <span className="block" style={{
+                color: '#FFD700',
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+                fontWeight: '900'
+              }}>
                 Recovery Starts Here
               </span>
             </h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-green-100 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4" style={{
-              animation: 'fadeInUp 1s ease-out 0.4s both'
+            {/* Subheading */}
+            <p className={`text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 font-semibold transition-all duration-1000 delay-500 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
+              textShadow: '1px 1px 3px rgba(0, 0, 0, 0.9)',
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: '600',
+              letterSpacing: '0.025em'
             }}>
               A simple, supportive process designed to help you transition into a structured, 
               community-driven recovery environment where lasting change happens.
@@ -195,15 +228,28 @@ const HowItWorks = () => {
       </section>
 
       {/* Application Process */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
+        backgroundImage: `url('/assets/palm3.gif')`
+      }}>
+        {/* Tropical overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              How Sunshine Sober Living Works
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Four simple steps to begin your recovery journey in a supportive, structured environment.
-            </p>
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden mb-8">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance text-gray-800">
+                  How Sunshine Sober Living Works
+                </h2>
+                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                  Four simple steps to begin your recovery journey in a supportive, structured environment.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -212,17 +258,23 @@ const HowItWorks = () => {
               return (
                 <div 
                   key={step.number}
-                  className="text-center"
-                  style={{
-                    animation: `fadeInUp 1s ease-out ${0.6 + index * 0.1}s both`
-                  }}
+                  className="text-center bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-6 relative overflow-hidden group hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2"
                 >
-                  <div className={`w-20 h-20 ${getColorClasses(step.color)} rounded-full flex items-center justify-center mx-auto mb-6`}>
-                    <IconComponent className="w-10 h-10" />
+                  {/* Glass window reflection effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 bg-cyan-100/90 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                      <IconComponent className="w-10 h-10 text-cyan-700" />
+                    </div>
+                    <div className="text-4xl font-bold text-cyan-300 mb-4 flex items-center justify-center">
+                      <FaTree className="w-6 h-6 mr-2 text-emerald-600" />
+                      {step.number}
+                    </div>
+                    <h3 className="text-xl font-bold text-cyan-800 mb-4">{step.title}</h3>
+                    <p className="text-cyan-700 leading-relaxed font-medium">{step.description}</p>
                   </div>
-                  <div className="text-4xl font-bold text-gray-300 mb-4">{step.number}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{step.description}</p>
                 </div>
               );
             })}
@@ -231,15 +283,28 @@ const HowItWorks = () => {
       </section>
 
       {/* What's Included */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
+        backgroundImage: `url('/assets/palm3.gif')`
+      }}>
+        {/* Tropical overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What's Included
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Everything you need for comfortable, structured living is provided.
-            </p>
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden mb-8">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance text-gray-800">
+                  What's Included
+                </h2>
+                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                  Everything you need for comfortable, structured living is provided.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -248,15 +313,18 @@ const HowItWorks = () => {
               return (
                 <div 
                   key={item.name}
-                  className="bg-white rounded-2xl p-6 shadow-lg text-center"
-                  style={{
-                    animation: `fadeInUp 1s ease-out ${0.8 + index * 0.1}s both`
-                  }}
+                  className="bg-white/50 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/70 text-center group hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden"
                 >
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <IconComponent className="w-8 h-8 text-blue-600" />
+                  {/* Glass window reflection effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-100/90 to-emerald-100/90 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-cyan-200/90 group-hover:to-emerald-200/90 transition-all duration-300 backdrop-blur-sm shadow-lg">
+                      <IconComponent className="w-8 h-8 text-cyan-700" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-cyan-800 font-medium">{item.name}</h3>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{item.name}</h3>
                 </div>
               );
             })}
@@ -265,22 +333,35 @@ const HowItWorks = () => {
       </section>
 
       {/* House Rules Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
+        backgroundImage: `url('/assets/palm3.gif')`
+      }}>
+        {/* Tropical overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-red-50 text-red-700 rounded-full px-6 py-3 mb-6">
-              <FaExclamationTriangle className="w-5 h-5 mr-2" />
-              <span className="font-semibold">Important</span>
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden mb-8">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <div className="inline-flex items-center bg-red-100/90 text-red-700 rounded-full px-6 py-3 mb-6 backdrop-blur-sm">
+                  <FaExclamationTriangle className="w-5 h-5 mr-2" />
+                  <span className="font-semibold">Important</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance text-gray-800">
+                  House Rules
+                </h2>
+                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                  Break these rules and your stay will be terminated. You have 3 warnings ONLY.
+                  <span className="block text-red-600 font-semibold mt-2">
+                    (RED TYPE = IMMEDIATE REMOVAL FROM HOME)
+                  </span>
+                </p>
+              </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              House Rules
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Break these rules and your stay will be terminated. You have 3 warnings ONLY.
-              <span className="block text-red-600 font-semibold mt-2">
-                (RED TYPE = IMMEDIATE REMOVAL FROM HOME)
-              </span>
-            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -289,128 +370,184 @@ const HowItWorks = () => {
               return (
                 <div 
                   key={category.title}
-                  className="bg-gray-50 rounded-2xl p-6 shadow-lg"
-                  style={{
-                    animation: `fadeInUp 1s ease-out ${1.2 + index * 0.1}s both`
-                  }}
+                  className="bg-white/50 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/70 relative overflow-hidden group hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2"
                 >
-                  <div className="flex items-center mb-6">
-                    <div className={`w-12 h-12 ${getColorClasses(category.color)} rounded-full flex items-center justify-center mr-4`}>
-                      <IconComponent className="w-6 h-6" />
+                  {/* Glass window reflection effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center mb-6">
+                      <div className={`w-12 h-12 ${getColorClasses(category.color)} rounded-full flex items-center justify-center mr-4 backdrop-blur-sm shadow-lg`}>
+                        <IconComponent className="w-6 h-6" />
+                      </div>
+                      <h3 className="text-xl font-bold text-cyan-800">{category.title}</h3>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">{category.title}</h3>
+                    <ul className="space-y-3">
+                      {category.rules.map((rule, ruleIndex) => (
+                        <li key={ruleIndex} className="flex items-start">
+                          <span className="text-red-500 font-bold mr-2 mt-1">•</span>
+                          <span className="text-cyan-700 text-sm leading-relaxed font-medium">{rule}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="space-y-3">
-                    {category.rules.map((rule, ruleIndex) => (
-                      <li key={ruleIndex} className="flex items-start">
-                        <span className="text-red-500 font-bold mr-2 mt-1">•</span>
-                        <span className="text-gray-700 text-sm leading-relaxed">{rule}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               );
             })}
           </div>
 
           <div className="mt-12 text-center">
-            <div className="bg-red-50 border border-red-200 rounded-2xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold text-red-700 mb-4">
-                ⚠️ Zero Tolerance Policy
-              </h3>
-              <p className="text-red-600 mb-4">
-                These rules are designed to create a safe, supportive environment for all residents. 
-                Violations will result in immediate consequences as outlined above.
-              </p>
-              <p className="text-gray-700">
-                By applying to Sunshine Sober Living, you acknowledge that you have read, 
-                understood, and agree to follow all house rules.
-              </p>
+            <div className="bg-red-100/90 backdrop-blur-lg border border-red-300 rounded-2xl p-8 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-white/10 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold text-red-700 mb-4 flex items-center justify-center">
+                  <FaExclamationTriangle className="w-6 h-6 mr-2" />
+                  ⚠️ Zero Tolerance Policy
+                </h3>
+                <p className="text-red-600 mb-4 font-medium">
+                  These rules are designed to create a safe, supportive environment for all residents. 
+                  Violations will result in immediate consequences as outlined above.
+                </p>
+                <p className="text-cyan-700 font-medium">
+                  By applying to Sunshine Sober Living, you acknowledge that you have read, 
+                  understood, and agree to follow all house rules.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* House Structure & Expectations */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
+        backgroundImage: `url('/assets/palm3.gif')`
+      }}>
+        {/* Tropical overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-                House Structure & Expectations
-              </h2>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <FaUsers className="w-4 h-4 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Community Living</h3>
-                    <p className="text-gray-600">Shared responsibilities, mutual support, and respect for all residents and staff.</p>
-                  </div>
-                </div>
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-balance text-gray-800">
+                  House Structure & Expectations
+                </h2>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <FaClock className="w-4 h-4 text-green-600" />
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-cyan-100/90 rounded-full flex items-center justify-center flex-shrink-0 mt-1 backdrop-blur-sm shadow-lg">
+                      <FaUsers className="w-4 h-4 text-cyan-700" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-cyan-800 mb-2 flex items-center">
+                        <FaTree className="w-4 h-4 mr-2 text-emerald-600" />
+                        Community Living
+                      </h3>
+                      <p className="text-cyan-700 font-medium">Shared responsibilities, mutual support, and respect for all residents and staff.</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Structured Environment</h3>
-                    <p className="text-gray-600">Clear house rules, curfews, and guidelines designed to support your recovery and personal growth.</p>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-emerald-100/90 rounded-full flex items-center justify-center flex-shrink-0 mt-1 backdrop-blur-sm shadow-lg">
+                      <FaClock className="w-4 h-4 text-emerald-700" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-emerald-800 mb-2 flex items-center">
+                        <FaLeaf className="w-4 h-4 mr-2 text-emerald-600" />
+                        Structured Environment
+                      </h3>
+                      <p className="text-emerald-700 font-medium">Clear house rules, curfews, and guidelines designed to support your recovery and personal growth.</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <FaArrowRight className="w-4 h-4 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Personal Development</h3>
-                    <p className="text-gray-600">Encouraged to engage in work, recovery meetings, or educational pursuits while maintaining sobriety.</p>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-purple-100/90 rounded-full flex items-center justify-center flex-shrink-0 mt-1 backdrop-blur-sm shadow-lg">
+                      <FaArrowRight className="w-4 h-4 text-purple-700" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-purple-800 mb-2 flex items-center">
+                        <FaSeedling className="w-4 h-4 mr-2 text-emerald-600" />
+                        Personal Development
+                      </h3>
+                      <p className="text-purple-700 font-medium">Encouraged to engage in work, recovery meetings, or educational pursuits while maintaining sobriety.</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">Ready to Get Started?</h3>
-              <p className="text-blue-100 mb-6">
-                Join our supportive community and begin your journey to lasting recovery. 
-                No fixed timeline—stay as long as you need while actively participating and staying clean.
-              </p>
-              <Link 
-                to="/contact" 
-                className="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-900 font-semibold rounded-full hover:bg-gray-100 transition-colors duration-300"
-              >
-                Apply Now
-              </Link>
+            <div className="bg-gradient-to-br from-cyan-500 to-emerald-600 rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-white/10 rounded-3xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold mb-6 flex items-center">
+                  <FaStar className="w-6 h-6 mr-2" />
+                  Ready to Get Started?
+                </h3>
+                <p className="text-cyan-100 mb-6 font-medium">
+                  Join our supportive community and begin your journey to lasting recovery. 
+                  No fixed timeline—stay as long as you need while actively participating and staying clean.
+                </p>
+                <Link 
+                  to="/contact" 
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-cyan-900 font-semibold rounded-full hover:bg-gray-100 transition-colors duration-300"
+                >
+                  <FaHome className="w-5 h-5 mr-2" />
+                  <FaTree className="w-4 h-4 mr-1" />
+                  Apply Now
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* PDF Documents Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
+        backgroundImage: `url('/assets/palm3.gif')`
+      }}>
+        {/* Tropical overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Important Documents
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Download or view our house rules and intake form to better understand our program requirements.
-            </p>
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden mb-8">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance text-gray-800">
+                  Important Documents
+                </h2>
+                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                  Download or view our house rules and intake form to better understand our program requirements.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* House Rules PDF */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/70 hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10 text-center">
+                <div className="w-16 h-16 bg-red-100/90 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm shadow-lg">
                   <FaExclamationTriangle className="w-8 h-8 text-red-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">House Rules</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-xl font-bold text-cyan-800 mb-4">House Rules</h3>
+                <p className="text-cyan-700 mb-6 font-medium">
                   Complete detailed house rules and policies that all residents must follow.
                 </p>
                 <a 
@@ -420,28 +557,34 @@ const HowItWorks = () => {
                   className="inline-flex items-center justify-center px-6 py-3 bg-red-600 text-white font-semibold rounded-full hover:bg-red-700 transition-colors duration-300"
                 >
                   <FaExclamationTriangle className="w-4 h-4 mr-2" />
+                  <FaTree className="w-4 h-4 mr-1" />
                   View House Rules
                 </a>
               </div>
             </div>
 
             {/* Intake Form PDF */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <FaClipboardCheck className="w-8 h-8 text-blue-600" />
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/70 hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10 text-center">
+                <div className="w-16 h-16 bg-cyan-100/90 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm shadow-lg">
+                  <FaClipboardCheck className="w-8 h-8 text-cyan-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Intake Form</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-xl font-bold text-cyan-800 mb-4">Intake Form</h3>
+                <p className="text-cyan-700 mb-6 font-medium">
                   Application form for new residents interested in joining our sober living program.
                 </p>
                 <a 
                   href="/src/assets/HOH Intake Form.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors duration-300"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-cyan-600 text-white font-semibold rounded-full hover:bg-cyan-700 transition-colors duration-300"
                 >
                   <FaClipboardCheck className="w-4 h-4 mr-2" />
+                  <FaSeedling className="w-4 h-4 mr-1" />
                   View Intake Form
                 </a>
               </div>
@@ -449,35 +592,26 @@ const HowItWorks = () => {
           </div>
 
           <div className="text-center mt-12">
-            <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold text-blue-700 mb-4">
-                📋 Document Information
-              </h3>
-              <p className="text-blue-600 mb-4">
-                These documents will open in a new browser tab. You can view them online or download them for your records.
-              </p>
-              <p className="text-gray-700">
-                Please review the house rules carefully before applying, and ensure you can commit to following all guidelines.
-              </p>
+            <div className="bg-cyan-100/90 backdrop-blur-lg border border-cyan-300 rounded-2xl p-8 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-white/10 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold text-cyan-700 mb-4 flex items-center justify-center">
+                  <FaStar className="w-6 h-6 mr-2" />
+                  📋 Document Information
+                </h3>
+                <p className="text-cyan-600 mb-4 font-medium">
+                  These documents will open in a new browser tab. You can view them online or download them for your records.
+                </p>
+                <p className="text-cyan-700 font-medium">
+                  Please review the house rules carefully before applying, and ensure you can commit to following all guidelines.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-     
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 };

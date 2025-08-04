@@ -77,12 +77,17 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 palm-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <div className="relative bg-cover bg-center bg-no-repeat text-white py-24 lg:py-32 rounded-3xl overflow-hidden mb-20" style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80')`
+        <div className="relative text-white py-24 lg:py-32 rounded-3xl overflow-hidden mb-20" style={{
+          backgroundImage: `url('/assets/beach.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}>
+          {/* Overlay for readability */}
+          <div className="absolute inset-0 bg-black bg-opacity-30 rounded-3xl"></div>
           <div className="absolute inset-0" style={{
             background: 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8))'
           }}></div>

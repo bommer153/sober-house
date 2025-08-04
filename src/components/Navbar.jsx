@@ -1,60 +1,94 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaLeaf, FaWater } from 'react-icons/fa';
 import NavLink from './NavLink';
 import logo from '../assets/Logo 6.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const closeMenu = () => setIsOpen(false);
 
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-b border-gray-200">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-white/90 backdrop-blur-md shadow-tropical-lg border-b border-tropical-ocean-100' 
+        : 'bg-gradient-to-r from-tropical-ocean-500/95 to-tropical-palm-500/95 backdrop-blur-sm'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3" onClick={closeMenu}>
-            <img src={logo} alt="Sunshine Sober Living Florida" className="h-10 w-auto" />
+          <Link to="/" className="flex items-center space-x-3 group" onClick={closeMenu}>
+            <div className="relative">
+              <img src={logo} alt="Sunshine Sober Living Florida" className="h-10 w-auto transition-transform duration-300 group-hover:scale-110" />
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-tropical-sunset-400 rounded-full animate-pulse-slow"></div>
+            </div>
             <div className="hidden sm:block">
-              <div className="text-xl font-bold text-gray-900">Sunshine Sober Living</div>
-              <div className="text-xs text-gray-600">Florida</div>
+              <div className={`text-xl font-bold transition-colors duration-300 ${
+                scrolled ? 'text-tropical-ocean-700' : 'text-white'
+              }`}>
+                Sunshine Sober Living
+              </div>
+              <div className={`text-xs transition-colors duration-300 ${
+                scrolled ? 'text-tropical-ocean-500' : 'text-tropical-ocean-100'
+              }`}>
+                Florida
+              </div>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <NavLink to="/" isActive={isActive('/')} onClick={closeMenu}>
+            <NavLink to="/" isActive={isActive('/')} onClick={closeMenu} scrolled={scrolled}>
+              <FaWater className="w-4 h-4 mr-2" />
               Home
             </NavLink>
-            <NavLink to="/about" isActive={isActive('/about')} onClick={closeMenu}>
+            <NavLink to="/about" isActive={isActive('/about')} onClick={closeMenu} scrolled={scrolled}>
               About
             </NavLink>
-            <NavLink to="/how-it-works" isActive={isActive('/how-it-works')} onClick={closeMenu}>
+            <NavLink to="/how-it-works" isActive={isActive('/how-it-works')} onClick={closeMenu} scrolled={scrolled}>
               How It Works
             </NavLink>
-            <NavLink to="/gallery" isActive={isActive('/gallery')} onClick={closeMenu}>
+            <NavLink to="/gallery" isActive={isActive('/gallery')} onClick={closeMenu} scrolled={scrolled}>
               Gallery
             </NavLink>
-            <NavLink to="/contact" isActive={isActive('/contact')} onClick={closeMenu}>
+            <NavLink to="/contact" isActive={isActive('/contact')} onClick={closeMenu} scrolled={scrolled}>
               Contact
             </NavLink>
             <Link
               to="/contact"
-              className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-md"
+              className="tropical-button group relative overflow-hidden"
               onClick={closeMenu}
             >
-              Apply Now
+              <span className="relative z-10 flex items-center">
+                <FaLeaf className="w-4 h-4 mr-2 animate-pulse" />
+                Apply Now
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-tropical-sunset-500 to-tropical-coral-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md text-gray-900 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+            className={`lg:hidden p-2 rounded-full transition-all duration-300 ${
+              scrolled 
+                ? 'text-tropical-ocean-600 hover:bg-tropical-ocean-100' 
+                : 'text-white hover:bg-white/20'
+            } focus:outline-none focus:ring-2 focus:ring-tropical-ocean-300`}
           >
             {isOpen ? (
               <FaTimes className="w-6 h-6" />
@@ -66,25 +100,26 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden bg-white shadow-lg rounded-b-2xl border border-gray-200">
+          <div className="lg:hidden tropical-card mt-2 mb-4">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
                 to="/"
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 flex items-center ${
                   isActive('/') 
-                    ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white' 
-                    : 'text-gray-900 hover:bg-gray-100'
+                    ? 'bg-gradient-to-r from-tropical-ocean-500 to-tropical-palm-500 text-white shadow-tropical' 
+                    : 'text-tropical-ocean-700 hover:bg-tropical-ocean-50'
                 }`}
                 onClick={closeMenu}
               >
+                <FaWater className="w-4 h-4 mr-3" />
                 Home
               </Link>
               <Link
                 to="/about"
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                   isActive('/about') 
-                    ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white' 
-                    : 'text-gray-900 hover:bg-gray-100'
+                    ? 'bg-gradient-to-r from-tropical-ocean-500 to-tropical-palm-500 text-white shadow-tropical' 
+                    : 'text-tropical-ocean-700 hover:bg-tropical-ocean-50'
                 }`}
                 onClick={closeMenu}
               >
@@ -92,10 +127,10 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/how-it-works"
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                   isActive('/how-it-works') 
-                    ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white' 
-                    : 'text-gray-900 hover:bg-gray-100'
+                    ? 'bg-gradient-to-r from-tropical-ocean-500 to-tropical-palm-500 text-white shadow-tropical' 
+                    : 'text-tropical-ocean-700 hover:bg-tropical-ocean-50'
                 }`}
                 onClick={closeMenu}
               >
@@ -103,10 +138,10 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/gallery"
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                   isActive('/gallery') 
-                    ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white' 
-                    : 'text-gray-900 hover:bg-gray-100'
+                    ? 'bg-gradient-to-r from-tropical-ocean-500 to-tropical-palm-500 text-white shadow-tropical' 
+                    : 'text-tropical-ocean-700 hover:bg-tropical-ocean-50'
                 }`}
                 onClick={closeMenu}
               >
@@ -114,10 +149,10 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/contact"
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                   isActive('/contact') 
-                    ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white' 
-                    : 'text-gray-900 hover:bg-gray-100'
+                    ? 'bg-gradient-to-r from-tropical-ocean-500 to-tropical-palm-500 text-white shadow-tropical' 
+                    : 'text-tropical-ocean-700 hover:bg-tropical-ocean-50'
                 }`}
                 onClick={closeMenu}
               >
@@ -125,9 +160,10 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/contact"
-                className="block px-3 py-2 rounded-md text-base font-medium bg-gradient-to-r from-yellow-400 to-orange-500 text-white hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 shadow-md"
+                className="block px-4 py-3 rounded-xl text-base font-medium tropical-button-secondary mt-4 text-center"
                 onClick={closeMenu}
               >
+                <FaLeaf className="w-4 h-4 mr-2 inline animate-pulse" />
                 Apply Now
               </Link>
             </div>

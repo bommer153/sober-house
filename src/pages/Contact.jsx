@@ -1,135 +1,212 @@
-import React, { useState } from 'react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaExclamationTriangle, FaClipboardCheck } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaExclamationTriangle, FaClipboardCheck, FaLeaf, FaHome, FaWater, FaTree, FaSeedling, FaSun } from 'react-icons/fa';
 import ContactForm from '../components/ContactForm';
 import GoogleMap from '../components/GoogleMap';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   const [activeTab, setActiveTab] = useState('contact');
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center bg-no-repeat text-white py-24 lg:py-32 overflow-hidden" style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80')`
+      <section className="relative bg-cover bg-center bg-no-repeat text-white h-screen flex items-center justify-center overflow-hidden" style={{
+        backgroundImage: `url('/assets/Gallery_SSL_1.jpg')`
       }}>
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8))'
-        }}></div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Tropical overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/70 via-emerald-500/50 to-orange-400/60"></div>
+        
+        {/* Floating tropical elements */}
+        <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-400/30 rounded-full animate-bounce"></div>
+        <div className="absolute top-20 right-20 w-16 h-16 bg-orange-400/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-cyan-400/30 rounded-full animate-bounce" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/3 right-1/3 w-14 h-14 bg-yellow-400/30 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute bottom-1/3 right-1/4 w-18 h-18 bg-pink-400/30 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }}></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center bg-white text-gray-900 rounded-full px-6 py-3 mb-8 shadow-lg" style={{
-              animation: 'fadeInUp 0.8s ease-out'
-            }}>
-              <FaEnvelope className="w-5 h-5 text-purple-600 mr-2" />
-              <span className="font-semibold">Contact Sunshine Sober Living</span>
+            {/* Badge */}
+            <div className={`inline-flex items-center bg-white/40 backdrop-blur-lg text-cyan-800 rounded-full px-6 py-3 mb-8 shadow-2xl border border-white/60 relative overflow-hidden transition-all duration-1000 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}>
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/25 via-transparent to-white/10 rounded-full"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              <div className="relative z-10 flex items-center">
+                <FaLeaf className="w-5 h-5 mr-3 text-emerald-600 animate-pulse" />
+                <FaTree className="w-4 h-4 mr-2 text-emerald-500" />
+                <span className="text-sm font-semibold text-cyan-800">Get in Touch</span>
+              </div>
             </div>
-
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight" style={{
-              animation: 'fadeInUp 1s ease-out 0.2s both'
+            
+            {/* Main Heading */}
+            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+              fontFamily: 'Playfair Display, serif',
+              fontWeight: '800'
             }}>
-              Ready to Start Your
-              <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
-                Recovery Journey?
+              Get in Touch
+              <span className="block" style={{
+                color: '#FFD700',
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+                fontWeight: '900'
+              }}>
+                Start Your Journey
               </span>
             </h1>
-
-            <p className="text-lg sm:text-xl md:text-2xl text-purple-100 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4" style={{
-              animation: 'fadeInUp 1s ease-out 0.4s both'
+            
+            {/* Subheading */}
+            <p className={`text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 font-semibold transition-all duration-1000 delay-500 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
+              textShadow: '1px 1px 3px rgba(0, 0, 0, 0.9)',
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: '600',
+              letterSpacing: '0.025em'
             }}>
-              Contact us today to learn more about our sober living program and take the first step
-              towards lasting recovery and personal growth.
+              Ready to take the first step towards recovery? Contact us today to learn more about our supportive sober living environment and begin your journey to lasting sobriety.
             </p>
+          
           </div>
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Contact Content Section */}
+      <section className="py-20 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
+        backgroundImage: `url('/assets/palm3.gif')`
+      }}>
+        {/* Tropical overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden mb-8">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  Get in Touch
+                </h2>
+                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                  We're here to help you start your recovery journey. Contact us today to learn more about our program.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div style={{
-              animation: 'fadeInUp 1s ease-out 0.6s both'
-            }}>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Get In Touch</h2>
-              <p className="text-gray-600 mb-8">
-                Fill out the form below and we'll get back to you as soon as possible.
-                We're here to answer your questions and help you begin your recovery journey.
-              </p>
-              <ContactForm />
+            <div id="contact-form" className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                  <FaTree className="w-6 h-6 mr-2 text-emerald-600" />
+                  Send us a Message
+                </h3>
+                <ContactForm />
+              </div>
             </div>
-
+            
             {/* Contact Information */}
-            <div className="space-y-8" style={{
-              animation: 'fadeInUp 1s ease-out 0.8s both'
-            }}>
-              <div className="bg-white text-gray-900 rounded-2xl shadow-lg p-8 border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
-
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <FaMapMarkerAlt className="w-6 h-6 text-blue-600" />
+            <div id="contact-info" className="space-y-8">
+              <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden">
+                {/* Glass window reflection effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <FaLeaf className="w-6 h-6 mr-2 text-emerald-600" />
+                    Contact Information
+                  </h3>
+                  <div className="space-y-6">
+                    <div className="flex items-start">
+                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-100/90 to-cyan-200/90 rounded-xl flex items-center justify-center mr-4 backdrop-blur-sm shadow-lg">
+                        <FaPhone className="w-6 h-6 text-cyan-700" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-cyan-800 flex items-center">
+                          <FaTree className="w-4 h-4 mr-2 text-emerald-600" />
+                          Phone
+                        </h4>
+                        <p className="text-cyan-700 font-medium">(555) 123-4567</p>
+                        <p className="text-cyan-700 text-sm font-medium">Available 24/7</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">Address</h4>
-                      <p className="text-gray-600">
-                        3475 18th Ave South<br />
-                        St. Petersburg, FL
-                      </p>
+                    
+                    <div className="flex items-start">
+                      <div className="w-12 h-12 bg-gradient-to-br from-emerald-100/90 to-emerald-200/90 rounded-xl flex items-center justify-center mr-4 backdrop-blur-sm shadow-lg">
+                        <FaEnvelope className="w-6 h-6 text-emerald-700" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-emerald-800 flex items-center">
+                          <FaSeedling className="w-4 h-4 mr-2 text-emerald-600" />
+                          Email
+                        </h4>
+                        <p className="text-emerald-700 font-medium">info@sunshinesoberliving.com</p>
+                        <p className="text-emerald-700 text-sm font-medium">Response within 24 hours</p>
+                      </div>
                     </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <FaPhone className="w-6 h-6 text-green-600" />
+                    
+                    <div className="flex items-start">
+                      <div className="w-12 h-12 bg-gradient-to-br from-orange-100/90 to-orange-200/90 rounded-xl flex items-center justify-center mr-4 backdrop-blur-sm shadow-lg">
+                        <FaMapMarkerAlt className="w-6 h-6 text-orange-700" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-orange-800 flex items-center">
+                          <FaSun className="w-4 h-4 mr-2 text-orange-600" />
+                          Location
+                        </h4>
+                        <p className="text-orange-700 font-medium">123 Recovery Street</p>
+                        <p className="text-orange-700 font-medium">Sunshine City, FL 12345</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">Phone</h4>
-                      <p className="text-gray-600">Call us for immediate assistance</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <FaEnvelope className="w-6 h-6 text-purple-600" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">Email</h4>
-                      <p className="text-gray-600">Send us a message anytime</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <FaClock className="w-6 h-6 text-orange-600" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">Response Time</h4>
-                      <p className="text-gray-600">We typically respond within 24 hours</p>
+                    
+                    <div className="flex items-start">
+                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-100/90 to-cyan-200/90 rounded-xl flex items-center justify-center mr-4 backdrop-blur-sm shadow-lg">
+                        <FaClock className="w-6 h-6 text-cyan-700" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-cyan-800 flex items-center">
+                          <FaWater className="w-4 h-4 mr-2 text-cyan-600" />
+                          Office Hours
+                        </h4>
+                        <p className="text-cyan-700 font-medium">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p className="text-cyan-700 font-medium">Weekends: 10:00 AM - 4:00 PM</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* Emergency Contact */}
-              <div className="bg-gradient-to-r from-red-600 to-red-700 text-white rounded-2xl shadow-lg p-8" style={{
-                animation: 'fadeInUp 1s ease-out 1s both'
-              }}>
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0">
-                    <FaExclamationTriangle className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Emergency Support</h3>
-                    <p className="text-red-100 mb-4">
-                      If you're in crisis or need immediate assistance, please contact emergency services or call the National Suicide Prevention Lifeline.
-                    </p>
-                    <div className="space-y-2 text-sm">
-                      <p><strong>National Suicide Prevention Lifeline:</strong> 988</p>
-                      <p><strong>Emergency Services:</strong> 911</p>
+              
+              <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden">
+                {/* Glass window reflection effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <FaExclamationTriangle className="w-6 h-6 mr-2 text-red-600" />
+                    Emergency Contact
+                  </h3>
+                  <div className="flex items-start">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-100/90 to-red-200/90 rounded-xl flex items-center justify-center mr-4 backdrop-blur-sm shadow-lg">
+                      <FaExclamationTriangle className="w-6 h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-red-700 flex items-center">
+                        <FaTree className="w-4 h-4 mr-2 text-emerald-600" />
+                        24/7 Crisis Line
+                      </h4>
+                      <p className="text-red-600 font-semibold">(555) 999-8888</p>
+                      <p className="text-red-600 text-sm font-medium">For immediate assistance</p>
                     </div>
                   </div>
                 </div>
@@ -140,219 +217,79 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Find Us</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Located in beautiful St. Petersburg, Florida, our sober living homes provide a safe,
-              supportive environment for your recovery journey.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <GoogleMap
-              address="3475 18th Ave South, St. Petersburg, FL"
-              title="Sunshine Sober Living Florida"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* PDF Documents Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
+        backgroundImage: `url('/assets/palm3.gif')`
+      }}>
+        {/* Tropical overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Important Documents
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Download or view our house rules and intake form to better understand our program requirements.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* House Rules PDF */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <FaExclamationTriangle className="w-8 h-8 text-red-600" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">House Rules</h3>
-                <p className="text-gray-600 mb-6">
-                  Complete detailed house rules and policies that all residents must follow.
-                </p>
-                <a
-                  href="/src/assets/HOH House Rules.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-red-600 text-white font-semibold rounded-full hover:bg-red-700 transition-colors duration-300"
-                >
-                  <FaExclamationTriangle className="w-4 h-4 mr-2" />
-                  View House Rules
-                </a>
-              </div>
-            </div>
-
-            {/* Intake Form PDF */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <FaClipboardCheck className="w-8 h-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Intake Form</h3>
-                <p className="text-gray-600 mb-6">
-                  Application form for new residents interested in joining our sober living program.
-                </p>
-                <a
-                  href="/src/assets/HOH Intake Form.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors duration-300"
-                >
-                  <FaClipboardCheck className="w-4 h-4 mr-2" />
-                  View Intake Form
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold text-blue-700 mb-4">
-                📋 Document Information
-              </h3>
-              <p className="text-blue-600 mb-4">
-                These documents will open in a new browser tab. You can view them online or download them for your records.
-              </p>
-              <p className="text-gray-700">
-                Please review the house rules carefully before applying, and ensure you can commit to following all guidelines.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* FAQ Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Common questions about our sober living program and application process.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">How do I apply?</h3>
-                <p className="text-gray-600">
-                  Submit a short application and complete a quick interview. We welcome individuals who are committed to sober living and ready to grow in a supportive environment.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">What's included in the program?</h3>
-                <p className="text-gray-600">
-                  Rent in a fully-furnished home, all utilities including cable, phone, internet services, house supplies, and basic necessities like coffee, cleaning supplies, and laundry soap.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">How long can I stay?</h3>
-                <p className="text-gray-600">
-                  There's no fixed timeline—stay as long as you need while actively participating and staying clean. When you're ready, we'll support your transition to independent living.
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden mb-8">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  Find Us
+                </h2>
+                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                  Visit our location to see our facilities and meet our team in person.
                 </p>
               </div>
             </div>
-
-            <div className="space-y-6">
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">What are the house rules?</h3>
-                <p className="text-gray-600">
-                  Clear house rules, curfews, and guidelines designed to support your recovery and personal growth. Residents participate in daily chores, house meetings, and maintain sobriety.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Is there support available?</h3>
-                <p className="text-gray-600">
-                  Yes! Residents support one another, attend house meetings, and you're encouraged to engage in work, recovery meetings, or personal development activities.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Where are you located?</h3>
-                <p className="text-gray-600">
-                  We're located at 3475 18th Ave South, St. Petersburg, FL. Our homes provide a clean, safe, and stable environment in a supportive community setting.
-                </p>
-              </div>
+          </div>
+          <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 overflow-hidden relative">
+            {/* Glass window reflection effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+            <div className="relative z-10">
+              <GoogleMap />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Questions About Our Process?
-            </h2>
-            <p className="text-xl text-gray-600">
-              We're here to help you understand how our program works and answer any questions you may have.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaPhone className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
-              <p className="text-gray-600">Speak directly with our team</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaEnvelope className="w-8 h-8 text-green-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
-              <p className="text-gray-600">Send us your questions</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaMapMarkerAlt className="w-8 h-8 text-purple-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Visit Us</h3>
-              <p className="text-gray-600">3475 18th Ave South, St. Petersburg, FL</p>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors duration-300"
+      {/* Call to Action */}
+      <section className="py-20 text-white relative overflow-hidden" style={{
+        background: 'linear-gradient(135deg, #06b6d4 0%, #10b981 50%, #f59e0b 100%)'
+      }}>
+        {/* Floating elements */}
+        <div className="absolute top-10 right-10 w-16 h-16 bg-white/10 rounded-full animate-bounce"></div>
+        <div className="absolute bottom-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Take the Next Step?
+          </h2>
+          <p className="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
+            Don't wait to start your recovery journey. Contact us today and take the first step towards a brighter future.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              to="#contact-form" 
+              className="bg-gradient-to-r from-orange-500 to-rose-500 text-white px-6 py-3 rounded-full font-semibold hover:from-orange-600 hover:to-rose-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              Contact Us Today
+              <span className="flex items-center justify-center">
+                <FaHome className="w-5 h-5 mr-2" />
+                <FaTree className="w-4 h-4 mr-1" />
+                Apply Now
+              </span>
+            </Link>
+            <Link 
+              to="#contact-info" 
+              className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-cyan-600 transition-all duration-300 transform hover:scale-105"
+            >
+              <span className="flex items-center justify-center">
+                <FaLeaf className="w-5 h-5 mr-2" />
+                <FaSeedling className="w-4 h-4 mr-1" />
+                Contact Info
+              </span>
             </Link>
           </div>
         </div>
       </section>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 };

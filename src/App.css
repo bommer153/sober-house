@@ -1,1 +1,68 @@
 /* This file intentionally left blank - using Tailwind CSS only */
+
+/* Palm background styling for all sections */
+.palm-background {
+  background-image: url('/assets/palm3.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.palm-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+}
+
+.palm-background > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Simple Loading Spinner Animations */
+@keyframes tropicalSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.tropical-spin {
+  animation: tropicalSpin 2s ease-in-out infinite;
+}
+
+.gentle-pulse {
+  animation: gentlePulse 1.5s ease-in-out infinite;
+}
+
+/* Smooth scrolling for the entire app */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent layout shift during transitions */
+body {
+  overflow-x: hidden;
+}

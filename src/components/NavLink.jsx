@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 
-function NavLink({ to, children, onClick, className = "" }) {
+function NavLink({ to, children, onClick, className = "", scrolled = false }) {
   const location = useLocation();
   const isActive = location.pathname === to;
 
@@ -14,16 +14,25 @@ function NavLink({ to, children, onClick, className = "" }) {
     }
   };
 
+  const getLinkClasses = () => {
+    if (isActive) {
+      return scrolled 
+        ? 'bg-gradient-to-r from-tropical-ocean-100 to-tropical-palm-100 text-tropical-ocean-700 font-semibold shadow-tropical' 
+        : 'bg-white/20 text-white font-semibold backdrop-blur-sm';
+    } else {
+      return scrolled 
+        ? 'text-tropical-ocean-600 hover:text-tropical-ocean-700 hover:bg-tropical-ocean-50' 
+        : 'text-white/90 hover:text-white hover:bg-white/10';
+    }
+  };
+
   return (
     <Link 
       to={to} 
       onClick={handleClick} 
       className={`
-        px-4 py-2 rounded-lg font-medium transition-all duration-300
-        ${isActive 
-          ? 'bg-blue-100 text-blue-700 font-semibold' 
-          : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
-        } 
+        px-4 py-2 rounded-xl font-medium transition-all duration-300 flex items-center
+        ${getLinkClasses()} 
         ${className}
       `}
     >

@@ -2,12 +2,12 @@ import Button from '../Button'
 
 function Hero() {
   return (
-    <section className="relative bg-cover bg-center bg-no-repeat text-white py-24 lg:py-32 overflow-hidden bg-blue-900" style={{
-      backgroundImage: `url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=800&fit=crop')`
+    <section className="relative bg-cover bg-center bg-no-repeat text-white py-24 lg:py-32 overflow-hidden" style={{
+      backgroundImage: "url('/assets/Gallery_SSL_6.jpg')"
     }}>
       {/* Adding overlay back as separate div for testing */}
       <div className="absolute inset-0" style={{
-        background: 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8))'
+        background: 'rgba(0,0,0,0.5)'
       }}></div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,18 +23,22 @@ function Hero() {
           </div>
           
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight drop-shadow-lg animate-fade-in-up" style={{
-            animation: 'fadeInUp 1s ease-out 0.2s both'
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight animate-fade-in-up" style={{
+            animation: 'fadeInUp 1s ease-out 0.2s both',
+            textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.2)'
           }}>
             Your Journey to
-            <span className="block bg-gradient-to-r from-blue-300 to-indigo-300 bg-clip-text text-transparent drop-shadow-lg">
+            <span className="block bg-gradient-to-r from-blue-300 to-indigo-300 bg-clip-text text-transparent" style={{
+              textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.2)'
+            }}>
               Recovery Starts Here
             </span>
           </h1>
           
           {/* Subheading */}
-          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 drop-shadow-lg animate-fade-in-up" style={{
-            animation: 'fadeInUp 1s ease-out 0.4s both'
+          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in-up" style={{
+            animation: 'fadeInUp 1s ease-out 0.4s both',
+            textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.2)'
           }}>
             A supportive, structured environment where recovery meets community. 
             Start your journey to lasting sobriety with professional guidance and peer support.

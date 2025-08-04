@@ -1,152 +1,215 @@
 import Icon from '../components/Icon'
 import { Link } from 'react-router-dom'
+import { FaLeaf, FaWater, FaSun, FaHome, FaHeart, FaClock, FaMapPin, FaUsers, FaShieldAlt, FaEye, FaStar, FaAward, FaTree, FaSeedling } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
 
 function About() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center bg-no-repeat text-white py-24 lg:py-32 overflow-hidden" style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80')`
+      <section className="relative bg-cover bg-center bg-no-repeat text-white h-screen flex items-center justify-center overflow-hidden" style={{
+        backgroundImage: `url('/assets/resort.jpg')`
       }}>
-        {/* Gradient overlay */}
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8))'
-        }}></div>
+        {/* Tropical overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/70 via-emerald-500/50 to-orange-400/60"></div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Floating tropical elements */}
+        <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-400/30 rounded-full animate-bounce"></div>
+        <div className="absolute top-20 right-20 w-16 h-16 bg-orange-400/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-cyan-400/30 rounded-full animate-bounce" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/3 right-1/3 w-14 h-14 bg-yellow-400/30 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute bottom-1/3 right-1/4 w-18 h-18 bg-pink-400/30 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }}></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             {/* Badge */}
-            <div className="inline-flex items-center bg-white text-gray-900 rounded-full px-6 py-3 mb-8 shadow-lg" style={{
-              animation: 'fadeInUp 0.8s ease-out'
-            }}>
-              <svg className="w-5 h-5 mr-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span className="text-sm font-semibold">About Sunshine Sober Living</span>
+            <div className={`inline-flex items-center bg-white/40 backdrop-blur-lg text-cyan-800 rounded-full px-6 py-3 mb-8 shadow-2xl border border-white/60 relative overflow-hidden transition-all duration-1000 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}>
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/25 via-transparent to-white/10 rounded-full"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              <div className="relative z-10 flex items-center">
+                <FaLeaf className="w-5 h-5 mr-3 text-emerald-600 animate-pulse" />
+                <FaTree className="w-4 h-4 mr-2 text-emerald-500" />
+                <span className="text-sm font-semibold text-cyan-800">About Sunshine Sober Living</span>
+              </div>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight" style={{
-              animation: 'fadeInUp 1s ease-out 0.2s both'
+            {/* Main Heading */}
+            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+              fontFamily: 'Playfair Display, serif',
+              fontWeight: '800'
             }}>
               We don't just recover—
-              <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+              <span className="block" style={{
+                color: '#FFD700',
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+                fontWeight: '900'
+              }}>
                 we shine brighter every day
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed" style={{
-              animation: 'fadeInUp 1s ease-out 0.4s both'
+            {/* Subheading */}
+            <p className={`text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 font-semibold transition-all duration-1000 delay-500 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
+              textShadow: '1px 1px 3px rgba(0, 0, 0, 0.9)',
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: '600',
+              letterSpacing: '0.025em'
             }}>
               Grounded in our S.U.N.S.H.I.N.E. values: Stability, Unity, Nurture, Self-Accountability, Hope, Integrity, New Beginnings, and Empowerment.
             </p>
           </div>
         </div>
-        
-        <style jsx>{`
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-        `}</style>
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-24 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
+        backgroundImage: `url('/assets/palm3.gif')`
+      }}>
+        {/* Tropical overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-16">
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden mb-8">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance text-gray-800">
+                  Our Mission & Vision
+                </h2>
+                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                  Creating a bright, stable space where individuals healing from addiction can rediscover themselves and rebuild their future.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Mission */}
-            <div style={{ animation: 'fadeInUp 1s ease-out 0.2s both' }}>
-              <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-6">
-                <Icon name="target" size="sm" className="mr-2" />
-                Our Mission
-              </div>
-              
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-balance">
-                Creating a Bright,
-                <span className="block text-blue-600">Stable Space</span>
-              </h2>
-              
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                To create a bright, stable space where individuals healing from addiction can rediscover themselves, rebuild their future, and rise together—guided by structure, self-respect, and the shared belief that everyone deserves a fresh start in the sun.
-              </p>
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-balance text-gray-800">
+                  Our Mission
+                </h2>
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-cyan-700">
+                  Creating a Bright,<br />
+                  Stable Space
+                </h3>
+                
+                <p className="text-lg text-cyan-700 mb-8 leading-relaxed font-medium">
+                  To create a bright, stable space where individuals healing from addiction can rediscover themselves, rebuild their future, and rise together—guided by structure, self-respect, and the shared belief that everyone deserves a fresh start in the sun.
+                </p>
 
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4" style={{ animation: 'fadeInUp 1s ease-out 0.4s both' }}>
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="users" size="lg" color="blue" />
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-cyan-100/90 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm shadow-lg">
+                      <FaUsers className="w-6 h-6 text-cyan-700" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-cyan-800 mb-2 flex items-center">
+                        <FaTree className="w-4 h-4 mr-2 text-emerald-600" />
+                        Community Support
+                      </h4>
+                      <p className="text-cyan-700 font-medium">
+                        Building strong connections and mutual support among residents and staff.
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Community Support</h3>
-                    <p className="text-gray-600">
-                      Building strong connections and mutual support among residents and staff.
-                    </p>
-                  </div>
-                </div>
 
-                <div className="flex items-start space-x-4" style={{ animation: 'fadeInUp 1s ease-out 0.6s both' }}>
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="shield" size="lg" color="green" />
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-emerald-100/90 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm shadow-lg">
+                      <FaShieldAlt className="w-6 h-6 text-emerald-700" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-emerald-800 mb-2 flex items-center">
+                        <FaLeaf className="w-4 h-4 mr-2 text-emerald-600" />
+                        Structured Environment
+                      </h4>
+                      <p className="text-emerald-700 font-medium">
+                        Safe, drug-free living spaces with clear rules and guidelines to support recovery.
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Structured Environment</h3>
-                    <p className="text-gray-600">
-                      Safe, drug-free living spaces with clear rules and guidelines to support recovery.
-                    </p>
-                  </div>
-                </div>
 
-                <div className="flex items-start space-x-4" style={{ animation: 'fadeInUp 1s ease-out 0.8s both' }}>
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="heart" size="lg" color="purple" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Personal Growth</h3>
-                    <p className="text-gray-600">
-                      Opportunities to develop life skills, build healthy habits, and create lasting change.
-                    </p>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-orange-100/90 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm shadow-lg">
+                      <FaHeart className="w-6 h-6 text-orange-700" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-orange-800 mb-2 flex items-center">
+                        <FaSeedling className="w-4 h-4 mr-2 text-emerald-600" />
+                        Personal Growth
+                      </h4>
+                      <p className="text-orange-700 font-medium">
+                        Opportunities to develop life skills, build healthy habits, and create lasting change.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Vision */}
-            <div style={{ animation: 'fadeInUp 1s ease-out 0.4s both' }}>
-              <div className="inline-flex items-center px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-6">
-                <Icon name="eye" size="sm" className="mr-2" />
-                Our Vision
-              </div>
-              
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-balance">
-                A Thriving Recovery
-                <span className="block text-green-600">Community</span>
-              </h2>
-              
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                We envision a thriving recovery community across Florida where sober living isn't just about staying clean, it's about living fully, freely, and with purpose. Sunshine Sober Living will be known as a safe haven of hope, heart, and healing where transformation happens through consistency, connection, and courage.
-              </p>
-
-              <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl p-8 text-white text-center shadow-2xl">
-                <div className="w-24 h-24 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Icon name="target" size="2xl" color="white" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Our Promise</h3>
-                <p className="text-green-100 mb-6">
-                  A safe haven of hope, heart, and healing where transformation happens through consistency, connection, and courage.
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-balance text-gray-800">
+                  Our Vision
+                </h2>
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-emerald-700">
+                  A Thriving Recovery<br />
+                  Community
+                </h3>
+                
+                <p className="text-lg text-emerald-700 mb-8 leading-relaxed font-medium">
+                  We envision a thriving recovery community across Florida where sober living isn't just about staying clean, it's about living fully, freely, and with purpose. Sunshine Sober Living will be known as a safe haven of hope, heart, and healing where transformation happens through consistency, connection, and courage.
                 </p>
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div>
-                    <div className="text-2xl font-bold">Florida</div>
-                    <div className="text-sm text-green-100">Recovery Community</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold">Purpose</div>
-                    <div className="text-sm text-green-100">Living Fully</div>
+
+                <div className="bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-3xl p-8 text-white text-center shadow-2xl relative overflow-hidden">
+                  {/* Glass window reflection effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-white/10 rounded-3xl"></div>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                  <div className="relative z-10">
+                    <h3 className="text-2xl font-bold mb-4 flex items-center justify-center">
+                      <FaStar className="w-6 h-6 mr-2" />
+                      Our Promise
+                    </h3>
+                    <p className="text-emerald-100 mb-6 font-medium">
+                      A safe haven of hope, heart, and healing where transformation happens through consistency, connection, and courage.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 text-center">
+                      <div>
+                        <div className="text-2xl font-bold flex items-center justify-center">
+                          <FaTree className="w-5 h-5 mr-2" />
+                          Florida
+                        </div>
+                        <div className="text-sm text-emerald-100">Recovery Community</div>
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold flex items-center justify-center">
+                          <FaSun className="w-5 h-5 mr-2" />
+                          Purpose
+                        </div>
+                        <div className="text-sm text-emerald-100">Living Fully</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -156,143 +219,217 @@ function About() {
       </section>
 
       {/* S.U.N.S.H.I.N.E. Values Section */}
-      <section className="py-24 lg:py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="text-center mb-16" style={{ animation: 'fadeInUp 1s ease-out 0.2s both' }}>
-            <div className="inline-flex items-center px-4 py-2 bg-yellow-50 text-yellow-700 rounded-full text-sm font-medium mb-6">
-              <Icon name="star" size="sm" className="mr-2" />
-              S.U.N.S.H.I.N.E. Core Values
+      <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
+        backgroundImage: `url('/assets/palm3.gif')`
+      }}>
+        {/* Tropical overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-16">
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden mb-8">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance text-gray-800">
+                  S.U.N.S.H.I.N.E. Core Values
+                </h2>
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-orange-600">
+                  "We don't just recover—<br />
+                  we shine brighter every day."
+                </h3>
+                <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-cyan-700 font-medium">
+                  These core values guide everything we do and shape the supportive environment we create for our residents.
+                </p>
+              </div>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance">
-              "We don't just recover—
-              <span className="block text-yellow-600">we shine brighter every day."</span>
-            </h2>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-gray-600">
-              These core values guide everything we do and shape the supportive environment we create for our residents.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* S - Stability */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center" style={{ animation: 'fadeInUp 1s ease-out 0.4s both' }}>
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="shield" size="xl" color="blue" />
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/70 text-center relative overflow-hidden group hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <div className="text-4xl font-bold text-cyan-700 mb-4 flex items-center justify-center">
+                  <FaTree className="w-8 h-8 mr-2" />
+                  S
+                </div>
+                <h3 className="text-xl font-bold text-cyan-800 mb-3">Stability</h3>
+                <p className="text-cyan-700 text-sm font-medium">
+                  We provide a safe, dependable environment where structure supports progress. Stability is the foundation of lasting change.
+                </p>
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">S</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Stability</h3>
-              <p className="text-gray-600 text-sm">
-                We provide a safe, dependable environment where structure supports progress. Stability is the foundation of lasting change.
-              </p>
             </div>
 
             {/* U - Unity */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center" style={{ animation: 'fadeInUp 1s ease-out 0.5s both' }}>
-              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="users" size="xl" color="green" />
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/70 text-center relative overflow-hidden group hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <div className="text-4xl font-bold text-emerald-700 mb-4 flex items-center justify-center">
+                  <FaUsers className="w-8 h-8 mr-2" />
+                  U
+                </div>
+                <h3 className="text-xl font-bold text-emerald-800 mb-3">Unity</h3>
+                <p className="text-emerald-700 text-sm font-medium">
+                  We grow stronger together. Our community thrives on teamwork, shared goals, and mutual support—no one gets left behind.
+                </p>
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">U</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Unity</h3>
-              <p className="text-gray-600 text-sm">
-                We grow stronger together. Our community thrives on teamwork, shared goals, and mutual support—no one gets left behind.
-              </p>
             </div>
 
             {/* N - Nurture */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center" style={{ animation: 'fadeInUp 1s ease-out 0.6s both' }}>
-              <div className="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="heart" size="xl" color="pink" />
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/70 text-center relative overflow-hidden group hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <div className="text-4xl font-bold text-rose-700 mb-4 flex items-center justify-center">
+                  <FaHeart className="w-8 h-8 mr-2" />
+                  N
+                </div>
+                <h3 className="text-xl font-bold text-rose-800 mb-3">Nurture</h3>
+                <p className="text-rose-700 text-sm font-medium">
+                  We create a home filled with compassion and encouragement. Healing happens in spaces where people feel valued, seen, and cared for.
+                </p>
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">N</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Nurture</h3>
-              <p className="text-gray-600 text-sm">
-                We create a home filled with compassion and encouragement. Healing happens in spaces where people feel valued, seen, and cared for.
-              </p>
             </div>
 
             {/* S - Self-Accountability */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center" style={{ animation: 'fadeInUp 1s ease-out 0.7s both' }}>
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="target" size="xl" color="purple" />
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/70 text-center relative overflow-hidden group hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <div className="text-4xl font-bold text-purple-700 mb-4 flex items-center justify-center">
+                  <FaShieldAlt className="w-8 h-8 mr-2" />
+                  S
+                </div>
+                <h3 className="text-xl font-bold text-purple-800 mb-3">Self-Accountability</h3>
+                <p className="text-purple-700 text-sm font-medium">
+                  We own our actions and choices. Personal responsibility empowers us to grow with integrity and self-respect.
+                </p>
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">S</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Self-Accountability</h3>
-              <p className="text-gray-600 text-sm">
-                We own our actions and choices. Personal responsibility empowers us to grow with integrity and self-respect.
-              </p>
             </div>
 
             {/* H - Hope */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center" style={{ animation: 'fadeInUp 1s ease-out 0.8s both' }}>
-              <div className="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="sun" size="xl" color="yellow" />
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/70 text-center relative overflow-hidden group hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <div className="text-4xl font-bold text-yellow-700 mb-4 flex items-center justify-center">
+                  <FaSun className="w-8 h-8 mr-2" />
+                  H
+                </div>
+                <h3 className="text-xl font-bold text-yellow-800 mb-3">Hope</h3>
+                <p className="text-yellow-700 text-sm font-medium">
+                  We believe that no past defines the future. Hope fuels our journey and reminds us that brighter days are always within reach.
+                </p>
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">H</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Hope</h3>
-              <p className="text-gray-600 text-sm">
-                We believe that no past defines the future. Hope fuels our journey and reminds us that brighter days are always within reach.
-              </p>
             </div>
 
             {/* I - Integrity */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center" style={{ animation: 'fadeInUp 1s ease-out 0.9s both' }}>
-              <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="star" size="xl" color="indigo" />
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/70 text-center relative overflow-hidden group hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <div className="text-4xl font-bold text-indigo-700 mb-4 flex items-center justify-center">
+                  <FaAward className="w-8 h-8 mr-2" />
+                  I
+                </div>
+                <h3 className="text-xl font-bold text-indigo-800 mb-3">Integrity</h3>
+                <p className="text-indigo-700 text-sm font-medium">
+                  We live with honesty and treat others with fairness and respect. Trust is earned and kept through consistent, truthful action.
+                </p>
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">I</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Integrity</h3>
-              <p className="text-gray-600 text-sm">
-                We live with honesty and treat others with fairness and respect. Trust is earned and kept through consistent, truthful action.
-              </p>
             </div>
 
             {/* N - New Beginnings */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center" style={{ animation: 'fadeInUp 1s ease-out 1s both' }}>
-              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="leaf" size="xl" color="emerald" />
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/70 text-center relative overflow-hidden group hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <div className="text-4xl font-bold text-emerald-700 mb-4 flex items-center justify-center">
+                  <FaSeedling className="w-8 h-8 mr-2" />
+                  N
+                </div>
+                <h3 className="text-xl font-bold text-emerald-800 mb-3">New Beginnings</h3>
+                <p className="text-emerald-700 text-sm font-medium">
+                  Every day is a chance to start again. We embrace fresh starts with open hearts and a willingness to change.
+                </p>
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">N</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">New Beginnings</h3>
-              <p className="text-gray-600 text-sm">
-                Every day is a chance to start again. We embrace fresh starts with open hearts and a willingness to change.
-              </p>
             </div>
 
             {/* E - Empowerment */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center" style={{ animation: 'fadeInUp 1s ease-out 1.1s both' }}>
-              <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="award" size="xl" color="orange" />
+            <div className="bg-white/50 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/70 text-center relative overflow-hidden group hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+              {/* Glass window reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="relative z-10">
+                <div className="text-4xl font-bold text-orange-700 mb-4 flex items-center justify-center">
+                  <FaStar className="w-8 h-8 mr-2" />
+                  E
+                </div>
+                <h3 className="text-xl font-bold text-orange-800 mb-3">Empowerment</h3>
+                <p className="text-orange-700 text-sm font-medium">
+                  We equip every resident with the tools, confidence, and support to build a life they're proud of—one sober step at a time.
+                </p>
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">E</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Empowerment</h3>
-              <p className="text-gray-600 text-sm">
-                We equip every resident with the tools, confidence, and support to build a life they're proud of—one sober step at a time.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 lg:py-32 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+      <section className="py-20 text-white relative overflow-hidden" style={{
+        background: 'linear-gradient(135deg, #06b6d4 0%, #10b981 50%, #f59e0b 100%)'
+      }}>
+        {/* Floating elements */}
+        <div className="absolute top-10 right-10 w-16 h-16 bg-white/10 rounded-full animate-bounce"></div>
+        <div className="absolute bottom-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Start Your Recovery Journey?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
             Whether you're transitioning from treatment or starting over with a clear mind and a hopeful heart, Sunshine is here to walk with you…. one step, one choice, and one day at a time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/contact" 
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
+              className="bg-gradient-to-r from-orange-500 to-rose-500 text-white px-6 py-3 rounded-full font-semibold hover:from-orange-600 hover:to-rose-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              Apply Now
+              <span className="flex items-center justify-center">
+                <FaHome className="w-5 h-5 mr-2" />
+                <FaTree className="w-4 h-4 mr-1" />
+                Apply Now
+              </span>
             </Link>
             <Link 
               to="/how-it-works" 
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300"
+              className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-cyan-600 transition-all duration-300 transform hover:scale-105"
             >
-              Learn More
+              <span className="flex items-center justify-center">
+                <FaLeaf className="w-5 h-5 mr-2" />
+                <FaSeedling className="w-4 h-4 mr-1" />
+                Learn More
+              </span>
             </Link>
           </div>
         </div>

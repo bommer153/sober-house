@@ -37,6 +37,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
+    <!-- Google Fonts - Beautiful, readable fonts for the recovery theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:wght@300;400;700;900&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Custom font variables for easy use */
+      :root {
+        --font-heading: 'Playfair Display', serif;
+        --font-body: 'Inter', sans-serif;
+        --font-accent: 'Merriweather', serif;
+        --font-ui: 'Source Sans Pro', sans-serif;
+      }
+      
+      /* Apply fonts globally */
+      body {
+        font-family: var(--font-body);
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+      }
+      
+      .font-accent {
+        font-family: var(--font-accent);
+      }
+      
+      .font-ui {
+        font-family: var(--font-ui);
+      }
+    </style>
+    
     <!-- Structured Data -->
     <script type="application/ld+json">
     {

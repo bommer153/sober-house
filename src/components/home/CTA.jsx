@@ -2,15 +2,7 @@ import { Link } from 'react-router-dom'
 
 function CTA() {
   return (
-    <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-24 lg:py-32 overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{
-          backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="a" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0.05"/></linearGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/><circle cx="300" cy="200" r="100" fill="%23ffffff" fill-opacity="0.1"/><circle cx="900" cy="300" r="150" fill="%23ffffff" fill-opacity="0.1"/><path d="M0 700 Q400 500 800 700 T1200 700 L1200 800 L0 800 Z" fill="%23ffffff" fill-opacity="0.1"/></svg>')`
-        }}
-      ></div>
-      
+    <section className="relative palm-background text-white py-24 lg:py-32 overflow-hidden">
       {/* Background overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
       
