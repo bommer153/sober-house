@@ -36,8 +36,10 @@ function Terms() {
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-8 leading-tight text-white" style={{
               textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
-              fontFamily: 'Playfair Display, serif',
-              fontWeight: '900'
+              fontFamily: 'EB Garamond, serif',
+              fontWeight: '600',
+              lineHeight: '1.1',
+              letterSpacing: '-0.02em'
             }}>
               Terms of Service
             </h1>

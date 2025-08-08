@@ -51,7 +51,12 @@ function HouseListings() {
             <Icon name="home" size="sm" className="mr-2" />
             Our Houses
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance" style={{
+            fontFamily: 'EB Garamond, serif',
+            fontWeight: '600',
+            lineHeight: '1.2',
+            letterSpacing: '-0.02em'
+          }}>
             Find Your Perfect
             <span className="block text-green-600">Recovery Home</span>
           </h2>

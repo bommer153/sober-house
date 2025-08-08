@@ -60,14 +60,19 @@ function Home() {
             {/* Main Heading */}
             <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
               textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
-              fontFamily: 'Playfair Display, serif',
-              fontWeight: '900'
+              fontFamily: 'EB Garamond, serif',
+              fontWeight: '600',
+              lineHeight: '1.1',
+              letterSpacing: '-0.02em'
             }}>
-              A Brighter Path to
+              A <span className="text-emerald-300 font-bold" style={{
+                textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
+                fontWeight: '600'
+              }}>Brighter</span> Path to
               <span className="block" style={{
                 color: '#EAB308',
                 textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
-                fontWeight: '900'
+                fontWeight: '600'
               }}>
                 Recovery
               </span>

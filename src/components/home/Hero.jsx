@@ -25,7 +25,11 @@ function Hero() {
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight animate-fade-in-up" style={{
             animation: 'fadeInUp 1s ease-out 0.2s both',
-            textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.2)'
+            textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.2)',
+            fontFamily: 'EB Garamond, serif',
+            fontWeight: '600',
+            lineHeight: '1.1',
+            letterSpacing: '-0.02em'
           }}>
             Your Journey to
             <span className="block bg-gradient-to-r from-blue-300 to-indigo-300 bg-clip-text text-transparent" style={{

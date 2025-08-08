@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaLeaf, FaWater, FaSun, FaTree, FaSeedling } from 'react-icons/fa';
-import logo from '../assets/Logo 6.png';
+import logo from '../assets/Logo 6-photoaidcom-cropped.png';
 
 const Footer = () => {
   const scrollToTop = () => {

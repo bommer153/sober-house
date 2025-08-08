@@ -2,7 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="/src/assets/Logo 6-photoaidcom-cropped.png" />
+    <link rel="apple-touch-icon" href="/src/assets/Logo 6-photoaidcom-cropped.png" />
+    <style>
+      /* Custom favicon styling for circular appearance */
+      .favicon-circle {
+        border-radius: 50%;
+        overflow: hidden;
+        display: inline-block;
+      }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Primary Meta Tags -->
@@ -37,35 +46,159 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Google Fonts - Beautiful, readable fonts for the recovery theme -->
+    <!-- Google Fonts - Premium typography for recovery and wellness -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:wght@300;400;700;900&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:wght@300;400;700;900&family=Source+Sans+Pro:wght@300;400;600;700;900&family=Crimson+Text:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&family=Lora:wght@400;500;600;700&family=Source+Serif+Pro:wght@300;400;600;700&family=EB+Garamond:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Premium fonts (if you have licenses) -->
+    <!-- <link rel="stylesheet" href="path/to/your/narin-font.css"> -->
+    <!-- <link rel="stylesheet" href="path/to/your/optima-font.css"> -->
     
     <style>
-      /* Custom font variables for easy use */
+      /* Premium typography system for recovery and wellness */
       :root {
-        --font-heading: 'Playfair Display', serif;
-        --font-body: 'Inter', sans-serif;
-        --font-accent: 'Merriweather', serif;
-        --font-ui: 'Source Sans Pro', sans-serif;
+        /* Primary heading font - EB Garamond (Optima-like elegance) */
+        --font-heading: 'EB Garamond', 'Cormorant Garamond', serif;
+        
+        /* Alternative heading font - modern and clean */
+        --font-heading-alt: 'DM Serif Display', serif;
+        
+        /* Body text - highly readable */
+        --font-body: 'DM Sans', sans-serif;
+        
+        /* Accent font - warm and inviting */
+        --font-accent: 'Crimson Text', serif;
+        
+        /* UI elements - clean and modern */
+        --font-ui: 'Inter', sans-serif;
+        
+        /* Display font for hero titles - Lora (Optima-like elegance) */
+        --font-display: 'Lora', 'EB Garamond', 'Playfair Display', serif;
+        
+        /* Classic serif for quotes and testimonials */
+        --font-classic: 'Libre Baskerville', serif;
+        
+        /* Premium display font - Source Serif Pro (Narin-like modern elegance) */
+        --font-premium: 'Source Serif Pro', 'EB Garamond', serif;
+        
+        /* Hero title font - Lora for maximum elegance (Optima alternative) */
+        --font-hero: 'Lora', serif;
       }
       
       /* Apply fonts globally */
       body {
         font-family: var(--font-body);
+        line-height: 1.6;
+        font-weight: 400;
       }
       
-      h1, h2, h3, h4, h5, h6 {
+      /* Main headings - elegant and authoritative */
+      h1, h2, h3 {
         font-family: var(--font-heading);
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
       }
       
-      .font-accent {
+      /* Subheadings - clean and modern */
+      h4, h5, h6 {
+        font-family: var(--font-heading-alt);
+        font-weight: 500;
+        line-height: 1.3;
+      }
+      
+      /* Hero titles - dramatic and impactful with Optima */
+      .hero-title {
+        font-family: var(--font-hero);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        text-transform: none;
+      }
+      
+      /* Section titles - warm and inviting */
+      .section-title {
         font-family: var(--font-accent);
+        font-weight: 600;
+        line-height: 1.3;
       }
       
-      .font-ui {
-        font-family: var(--font-ui);
+      /* Quote text - classic and trustworthy */
+      .quote-text {
+        font-family: var(--font-classic);
+        font-weight: 400;
+        line-height: 1.5;
+        font-style: italic;
+      }
+      
+      /* Utility classes */
+      .font-accent { font-family: var(--font-accent); }
+      .font-ui { font-family: var(--font-ui); }
+      .font-display { font-family: var(--font-display); }
+      .font-classic { font-family: var(--font-classic); }
+      
+      /* Typography enhancements */
+      .text-elegant {
+        font-family: var(--font-heading);
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+      
+      .text-modern {
+        font-family: var(--font-heading-alt);
+        font-weight: 400;
+        letter-spacing: -0.01em;
+      }
+      
+      .text-warm {
+        font-family: var(--font-accent);
+        font-weight: 600;
+        line-height: 1.4;
+      }
+      
+      /* Premium font alternatives styling */
+      .text-premium {
+        font-family: var(--font-premium);
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        line-height: 1.2;
+      }
+      
+      .text-premium-bold {
+        font-family: var(--font-premium);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+      
+      .text-premium-light {
+        font-family: var(--font-premium);
+        font-weight: 300;
+        letter-spacing: 0.03em;
+        line-height: 1.3;
+      }
+      
+      /* Hero font styling (Optima alternative) */
+      .text-hero {
+        font-family: var(--font-hero);
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        line-height: 1.3;
+      }
+      
+      .text-hero-bold {
+        font-family: var(--font-hero);
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+      }
+      
+      .text-hero-light {
+        font-family: var(--font-hero);
+        font-weight: 300;
+        letter-spacing: 0.02em;
+        line-height: 1.4;
       }
     </style>
     

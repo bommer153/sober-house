@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Circular Favicon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        canvas {
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            margin: 20px 0;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .instructions {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Circular Favicon from Logo 6</h1>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Click "Load Logo" to load your Logo 6 image</li>
+                <li>The image will be automatically cropped to a circle</li>
+                <li>Click "Download Circular Favicon" to save the circular version</li>
+                <li>Replace the favicon in your project with the downloaded file</li>
+            </ol>
+        </div>
+
+        <button onclick="loadImage()">Load Logo</button>
+        <button onclick="downloadFavicon()">Download Circular Favicon</button>
+        
+        <br>
+        <canvas id="faviconCanvas" width="32" height="32"></canvas>
+        <canvas id="previewCanvas" width="200" height="200"></canvas>
+        
+        <div id="status"></div>
+    </div>
+
+    <script>
+        const faviconCanvas = document.getElementById('faviconCanvas');
+        const previewCanvas = document.getElementById('previewCanvas');
+        const faviconCtx = faviconCanvas.getContext('2d');
+        const previewCtx = previewCanvas.getContext('2d');
+        const status = document.getElementById('status');
+
+        function loadImage() {
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload = function() {
+                createCircularFavicon(img);
+                status.textContent = 'Logo loaded and converted to circular favicon!';
+            };
+            img.onerror = function() {
+                status.textContent = 'Error loading image. Make sure the path is correct.';
+            };
+            img.src = './src/assets/Logo 6-photoaidcom-cropped.png';
+        }
+
+        function createCircularFavicon(img) {
+            // Create circular mask for favicon (32x32)
+            faviconCtx.save();
+            faviconCtx.beginPath();
+            faviconCtx.arc(16, 16, 16, 0, 2 * Math.PI);
+            faviconCtx.clip();
+            
+            // Calculate dimensions to maintain aspect ratio
+            const scale = Math.min(32 / img.width, 32 / img.height);
+            const width = img.width * scale;
+            const height = img.height * scale;
+            const x = (32 - width) / 2;
+            const y = (32 - height) / 2;
+            
+            faviconCtx.drawImage(img, x, y, width, height);
+            faviconCtx.restore();
+
+            // Create larger preview
+            previewCtx.save();
+            previewCtx.beginPath();
+            previewCtx.arc(100, 100, 100, 0, 2 * Math.PI);
+            previewCtx.clip();
+            
+            const previewScale = Math.min(200 / img.width, 200 / img.height);
+            const previewWidth = img.width * previewScale;
+            const previewHeight = img.height * previewScale;
+            const previewX = (200 - previewWidth) / 2;
+            const previewY = (200 - previewHeight) / 2;
+            
+            previewCtx.drawImage(img, previewX, previewY, previewWidth, previewHeight);
+            previewCtx.restore();
+        }
+
+        function downloadFavicon() {
+            const link = document.createElement('a');
+            link.download = 'circular-favicon.png';
+            link.href = faviconCanvas.toDataURL();
+            link.click();
+        }
+
+        // Auto-load the image when page loads
+        window.onload = function() {
+            loadImage();
+        };
+    </script>
+</body>
+</html>

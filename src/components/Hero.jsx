@@ -29,8 +29,13 @@ const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight">
-            A Brighter Path to
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight" style={{
+            fontFamily: 'EB Garamond, serif',
+            fontWeight: '600',
+            lineHeight: '1.1',
+            letterSpacing: '-0.02em'
+          }}>
+            A <span className="text-green-200 font-bold">Brighter</span> Path to
             <span className="block bg-gradient-to-r from-blue-600 via-green-600 to-orange-600 bg-clip-text text-transparent">
               Recovery
             </span>

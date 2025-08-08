@@ -128,8 +128,10 @@ const Gallery = () => {
             {/* Main Heading */}
             <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
               textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
-              fontFamily: 'Playfair Display, serif',
-              fontWeight: '900'
+              fontFamily: 'EB Garamond, serif',
+              fontWeight: '600',
+              lineHeight: '1.1',
+              letterSpacing: '-0.02em'
             }}>
               Take a Tour of
               <span className="block" style={{
