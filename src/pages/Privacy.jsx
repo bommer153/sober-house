@@ -12,8 +12,8 @@ function Privacy() {
       <section className="relative bg-cover bg-center bg-no-repeat text-white h-screen flex items-center justify-center overflow-hidden" style={{
         backgroundImage: `url('/assets/beach house.webp')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/70 via-emerald-500/50 to-orange-400/60"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/40 via-blue-500/30 to-green-400/20"></div>
         {/* Floating tropical elements */}
         <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-400/30 rounded-full animate-bounce"></div>
         <div className="absolute top-20 right-20 w-16 h-16 bg-orange-400/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
@@ -30,15 +30,24 @@ function Privacy() {
               <div className="relative z-10 flex items-center">
                 <FaLeaf className="w-5 h-5 mr-3 text-emerald-600 animate-pulse" />
                 <FaTree className="w-4 h-4 mr-2 text-emerald-500" />
-                <span className="text-sm font-semibold text-cyan-800">Trusted by 500+ individuals in recovery</span>
+                <span className="text-sm font-black text-blue-800">Trusted by 500+ individuals in recovery</span>
               </div>
             </div>
             {/* Main Heading */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-white drop-shadow-2xl">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-8 leading-tight text-white" style={{
+              textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
+              fontFamily: 'Playfair Display, serif',
+              fontWeight: '900'
+            }}>
               Privacy Policy
             </h1>
             {/* Subheading */}
-            <p className="text-lg sm:text-xl md:text-2xl text-cyan-50 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 drop-shadow-2xl font-medium">
+            <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 font-bold" style={{
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.95)',
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: '700',
+              letterSpacing: '0.025em'
+            }}>
               We are committed to protecting your privacy and ensuring the security of your personal information.
             </p>
             
@@ -50,8 +59,8 @@ function Privacy() {
       <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-10 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
@@ -59,13 +68,13 @@ function Privacy() {
             <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
             <div className="relative z-10 prose prose-lg max-w-none">
               <div className="mb-8">
-                <p className="text-cyan-700 mb-6 font-medium">
+                <p className="text-black mb-6 font-semibold">
                   <strong>Last updated:</strong> {new Date().toLocaleDateString()}
                 </p>
               </div>
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Information We Collect</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">1. Information We Collect</h2>
                   <p className="text-gray-600 mb-4">
                     We collect information you provide directly to us, such as when you:
                   </p>
@@ -81,7 +90,7 @@ function Privacy() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">2. How We Use Your Information</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">2. How We Use Your Information</h2>
                   <p className="text-gray-600 mb-4">
                     We use the information we collect to:
                   </p>
@@ -95,7 +104,7 @@ function Privacy() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Information Sharing</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">3. Information Sharing</h2>
                   <p className="text-gray-600 mb-4">
                     We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except in the following circumstances:
                   </p>
@@ -107,7 +116,7 @@ function Privacy() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Data Security</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">4. Data Security</h2>
                   <p className="text-gray-600 mb-4">
                     We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:
                   </p>
@@ -120,7 +129,7 @@ function Privacy() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Your Rights</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">5. Your Rights</h2>
                   <p className="text-gray-600 mb-4">
                     You have the right to:
                   </p>
@@ -134,35 +143,35 @@ function Privacy() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Cookies and Tracking</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">6. Cookies and Tracking</h2>
                   <p className="text-gray-600 mb-4">
                     Our website may use cookies and similar tracking technologies to enhance your browsing experience. You can control cookie settings through your browser preferences.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Third-Party Links</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">7. Third-Party Links</h2>
                   <p className="text-gray-600 mb-4">
                     Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these external sites. We encourage you to review their privacy policies.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Children's Privacy</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">8. Children's Privacy</h2>
                   <p className="text-gray-600 mb-4">
                     Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children under 18.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Changes to This Policy</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">9. Changes to This Policy</h2>
                   <p className="text-gray-600 mb-4">
                     We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new policy on this page and updating the "Last updated" date.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Contact Us</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">10. Contact Us</h2>
                   <p className="text-gray-600 mb-4">
                     If you have any questions about this Privacy Policy or our privacy practices, please contact us:
                   </p>
@@ -188,32 +197,32 @@ function Privacy() {
       <section className="py-16 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
           <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-10 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
             <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
             <div className="relative z-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl font-black text-gray-900 mb-4">
                 Questions About Our Privacy Policy?
               </h2>
-              <p className="text-cyan-700 mb-8 font-medium">
+              <p className="text-black mb-8 font-semibold">
                 We're here to help. Contact us if you have any questions about how we protect your privacy.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   to="/contact" 
                   onClick={scrollToTop}
-                  className="bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors duration-300"
+                  className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-300"
                 >
                   Contact Us
                 </Link>
                 <Link 
                   to="/" 
                   onClick={scrollToTop}
-                  className="border-2 border-cyan-600 text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-cyan-600 hover:text-white transition-colors duration-300"
+                  className="border-2 border-green-500 text-green-500 px-8 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition-colors duration-300"
                 >
                   Back to Home
                 </Link>

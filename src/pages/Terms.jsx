@@ -12,8 +12,8 @@ function Terms() {
       <section className="relative bg-cover bg-center bg-no-repeat text-white h-screen flex items-center justify-center overflow-hidden" style={{
         backgroundImage: `url('/assets/bldgbeach.jpg')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/70 via-emerald-500/50 to-orange-400/60"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/40 via-blue-500/30 to-green-400/20"></div>
         {/* Floating tropical elements */}
         <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-400/30 rounded-full animate-bounce"></div>
         <div className="absolute top-20 right-20 w-16 h-16 bg-orange-400/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
@@ -30,15 +30,24 @@ function Terms() {
               <div className="relative z-10 flex items-center">
                 <FaLeaf className="w-5 h-5 mr-3 text-emerald-600 animate-pulse" />
                 <FaTree className="w-4 h-4 mr-2 text-emerald-500" />
-                <span className="text-sm font-semibold text-cyan-800">Trusted by 500+ individuals in recovery</span>
+                <span className="text-sm font-black text-blue-800">Trusted by 500+ individuals in recovery</span>
               </div>
             </div>
             {/* Main Heading */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-white drop-shadow-2xl">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-8 leading-tight text-white" style={{
+              textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
+              fontFamily: 'Playfair Display, serif',
+              fontWeight: '900'
+            }}>
               Terms of Service
             </h1>
             {/* Subheading */}
-            <p className="text-lg sm:text-xl md:text-2xl text-cyan-50 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 drop-shadow-2xl font-medium">
+            <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 font-bold" style={{
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.95)',
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: '700',
+              letterSpacing: '0.025em'
+            }}>
               Please read these terms carefully before using our services or applying to our sober living program.
             </p>            
             
@@ -50,8 +59,8 @@ function Terms() {
       <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-10 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
@@ -59,20 +68,20 @@ function Terms() {
             <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
             <div className="relative z-10 prose prose-lg max-w-none">
               <div className="mb-8">
-                <p className="text-cyan-700 mb-6 font-medium">
+                <p className="text-black mb-6 font-semibold">
                   <strong>Last updated:</strong> {new Date().toLocaleDateString()}
                 </p>
               </div>
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">1. Acceptance of Terms</h2>
                   <p className="text-gray-600 mb-4">
                     By accessing and using our website and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Description of Service</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">2. Description of Service</h2>
                   <p className="text-gray-600 mb-4">
                     We provide sober living housing and recovery support services. Our services include:
                   </p>
@@ -86,7 +95,7 @@ function Terms() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Eligibility Requirements</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">3. Eligibility Requirements</h2>
                   <p className="text-gray-600 mb-4">
                     To be eligible for our sober living program, you must:
                   </p>
@@ -101,7 +110,7 @@ function Terms() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">4. House Rules and Guidelines</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">4. House Rules and Guidelines</h2>
                   <p className="text-gray-600 mb-4">
                     All residents must agree to and follow our house rules, which include:
                   </p>
@@ -117,7 +126,7 @@ function Terms() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Payment and Financial Terms</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">5. Payment and Financial Terms</h2>
                   <p className="text-gray-600 mb-4">
                     Our services require payment of fees as follows:
                   </p>
@@ -131,7 +140,7 @@ function Terms() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Termination and Discharge</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">6. Termination and Discharge</h2>
                   <p className="text-gray-600 mb-4">
                     We reserve the right to terminate services for:
                   </p>
@@ -148,7 +157,7 @@ function Terms() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Limitation of Liability</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">7. Limitation of Liability</h2>
                   <p className="text-gray-600 mb-4">
                     We strive to provide a safe and supportive environment, but we cannot guarantee:
                   </p>
@@ -164,7 +173,7 @@ function Terms() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Privacy and Confidentiality</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">8. Privacy and Confidentiality</h2>
                   <p className="text-gray-600 mb-4">
                     We are committed to protecting your privacy and maintaining confidentiality. However, we may disclose information when:
                   </p>
@@ -177,14 +186,14 @@ function Terms() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Intellectual Property</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">9. Intellectual Property</h2>
                   <p className="text-gray-600 mb-4">
                     All content on our website, including text, graphics, logos, and software, is our property and is protected by copyright laws. You may not reproduce, distribute, or create derivative works without our permission.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Dispute Resolution</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">10. Dispute Resolution</h2>
                   <p className="text-gray-600 mb-4">
                     Any disputes arising from these terms or our services will be resolved through:
                   </p>
@@ -196,14 +205,14 @@ function Terms() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Changes to Terms</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">11. Changes to Terms</h2>
                   <p className="text-gray-600 mb-4">
                     We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting. Continued use of our services constitutes acceptance of modified terms.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Contact Information</h2>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">12. Contact Information</h2>
                   <p className="text-gray-600 mb-4">
                     If you have questions about these terms, please contact us:
                   </p>
@@ -229,32 +238,32 @@ function Terms() {
       <section className="py-16 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
           <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-10 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/15 rounded-2xl"></div>
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
             <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
             <div className="relative z-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl font-black text-gray-900 mb-4">
                 Questions About Our Terms of Service?
               </h2>
-              <p className="text-cyan-700 mb-8 font-medium">
+              <p className="text-black mb-8 font-semibold">
                 We're here to help clarify any questions you may have about our terms and conditions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   to="/contact" 
                   onClick={scrollToTop}
-                  className="bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors duration-300"
+                  className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-300"
                 >
                   Contact Us
                 </Link>
                 <Link 
                   to="/" 
                   onClick={scrollToTop}
-                  className="border-2 border-cyan-600 text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-cyan-600 hover:text-white transition-colors duration-300"
+                  className="border-2 border-green-500 text-green-500 px-8 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition-colors duration-300"
                 >
                   Back to Home
                 </Link>

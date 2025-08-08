@@ -167,8 +167,8 @@ const HowItWorks = () => {
       <section className="relative bg-cover bg-center bg-no-repeat text-white h-screen flex items-center justify-center overflow-hidden" style={{
         backgroundImage: `url('/assets/Gallery SSL 3.jpg')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/70 via-emerald-500/50 to-orange-400/60"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/40 via-blue-500/30 to-green-400/20"></div>
         
         {/* Floating tropical elements */}
         <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-400/30 rounded-full animate-bounce"></div>
@@ -188,25 +188,25 @@ const HowItWorks = () => {
               <div className="relative z-10 flex items-center">
                 <FaLeaf className="w-5 h-5 mr-3 text-emerald-600 animate-pulse" />
                 <FaTree className="w-4 h-4 mr-2 text-emerald-500" />
-                <span className="text-sm font-bold text-gray-900" style={{
+                <span className="text-sm font-black text-blue-800" style={{
                   textShadow: '0 1px 2px rgba(255, 255, 255, 0.9)',
                   fontFamily: 'Source Sans Pro, sans-serif',
-                  fontWeight: '700',
+                  fontWeight: '900',
                   letterSpacing: '0.05em'
                 }}>Trusted by 500+ individuals in recovery</span>
               </div>
             </div>
             
             {/* Main Heading */}
-            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
-              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
+              textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
               fontFamily: 'Playfair Display, serif',
-              fontWeight: '800'
+              fontWeight: '900'
             }}>
               Your Journey to
               <span className="block" style={{
-                color: '#FFD700',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+                color: '#EAB308',
+                textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
                 fontWeight: '900'
               }}>
                 Recovery Starts Here
@@ -214,10 +214,10 @@ const HowItWorks = () => {
             </h1>
             
             {/* Subheading */}
-            <p className={`text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 font-semibold transition-all duration-1000 delay-500 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
-              textShadow: '1px 1px 3px rgba(0, 0, 0, 0.9)',
+            <p className={`text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 font-bold transition-all duration-1000 delay-500 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.95)',
               fontFamily: 'Inter, sans-serif',
-              fontWeight: '600',
+              fontWeight: '700',
               letterSpacing: '0.025em'
             }}>
               A simple, supportive process designed to help you transition into a structured, 
@@ -231,8 +231,8 @@ const HowItWorks = () => {
       <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-16">
@@ -242,10 +242,10 @@ const HowItWorks = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance text-gray-800">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 text-balance text-gray-900">
                   How Sunshine Sober Living Works
                 </h2>
-                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                <p className="text-lg text-black max-w-3xl mx-auto font-semibold">
                   Four simple steps to begin your recovery journey in a supportive, structured environment.
                 </p>
               </div>
@@ -265,15 +265,15 @@ const HowItWorks = () => {
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
                   <div className="relative z-10">
-                    <div className="w-20 h-20 bg-cyan-100/90 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                      <IconComponent className="w-10 h-10 text-cyan-700" />
+                    <div className="w-20 h-20 bg-cyan-200/90 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                      <IconComponent className="w-10 h-10 text-cyan-900" />
                     </div>
-                    <div className="text-4xl font-bold text-cyan-300 mb-4 flex items-center justify-center">
+                    <div className="text-4xl font-black text-cyan-600 mb-4 flex items-center justify-center">
                       <FaTree className="w-6 h-6 mr-2 text-emerald-600" />
                       {step.number}
                     </div>
-                    <h3 className="text-xl font-bold text-cyan-800 mb-4">{step.title}</h3>
-                    <p className="text-cyan-700 leading-relaxed font-medium">{step.description}</p>
+                    <h3 className="text-xl font-black text-cyan-900 mb-4">{step.title}</h3>
+                    <p className="text-black leading-relaxed font-semibold">{step.description}</p>
                   </div>
                 </div>
               );
@@ -286,8 +286,8 @@ const HowItWorks = () => {
       <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-16">
@@ -297,10 +297,14 @@ const HowItWorks = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance text-gray-800">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 text-balance text-gray-900" style={{
+                  fontWeight: '900',
+                  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
+                  fontFamily: 'Playfair Display, serif'
+                }}>
                   What's Included
                 </h2>
-                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                <p className="text-lg text-black max-w-3xl mx-auto font-semibold">
                   Everything you need for comfortable, structured living is provided.
                 </p>
               </div>
@@ -320,10 +324,12 @@ const HowItWorks = () => {
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
                   <div className="relative z-10">
-                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-100/90 to-emerald-100/90 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-cyan-200/90 group-hover:to-emerald-200/90 transition-all duration-300 backdrop-blur-sm shadow-lg">
-                      <IconComponent className="w-8 h-8 text-cyan-700" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-200/90 to-emerald-200/90 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-cyan-300/90 group-hover:to-emerald-300/90 transition-all duration-300 backdrop-blur-sm shadow-lg">
+                      <IconComponent className="w-8 h-8 text-cyan-900" />
                     </div>
-                    <h3 className="text-lg font-semibold text-cyan-800 font-medium">{item.name}</h3>
+                    <h3 className="text-lg font-semibold text-black" style={{
+                      fontFamily: 'Inter, sans-serif'
+                    }}>{item.name}</h3>
                   </div>
                 </div>
               );
@@ -336,8 +342,8 @@ const HowItWorks = () => {
       <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-16">
@@ -351,10 +357,10 @@ const HowItWorks = () => {
                   <FaExclamationTriangle className="w-5 h-5 mr-2" />
                   <span className="font-semibold">Important</span>
                 </div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance text-gray-800">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 text-balance text-gray-900">
                   House Rules
                 </h2>
-                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                <p className="text-lg text-black max-w-3xl mx-auto font-semibold">
                   Break these rules and your stay will be terminated. You have 3 warnings ONLY.
                   <span className="block text-red-600 font-semibold mt-2">
                     (RED TYPE = IMMEDIATE REMOVAL FROM HOME)
@@ -381,13 +387,13 @@ const HowItWorks = () => {
                       <div className={`w-12 h-12 ${getColorClasses(category.color)} rounded-full flex items-center justify-center mr-4 backdrop-blur-sm shadow-lg`}>
                         <IconComponent className="w-6 h-6" />
                       </div>
-                      <h3 className="text-xl font-bold text-cyan-800">{category.title}</h3>
+                      <h3 className="text-xl font-black text-cyan-900">{category.title}</h3>
                     </div>
                     <ul className="space-y-3">
                       {category.rules.map((rule, ruleIndex) => (
                         <li key={ruleIndex} className="flex items-start">
                           <span className="text-red-500 font-bold mr-2 mt-1">•</span>
-                          <span className="text-cyan-700 text-sm leading-relaxed font-medium">{rule}</span>
+                          <span className="text-black text-sm leading-relaxed font-semibold">{rule}</span>
                         </li>
                       ))}
                     </ul>
@@ -403,15 +409,15 @@ const HowItWorks = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-white/10 rounded-2xl"></div>
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-red-700 mb-4 flex items-center justify-center">
+                <h3 className="text-2xl font-black text-red-700 mb-4 flex items-center justify-center">
                   <FaExclamationTriangle className="w-6 h-6 mr-2" />
                   ⚠️ Zero Tolerance Policy
                 </h3>
-                <p className="text-red-600 mb-4 font-medium">
+                <p className="text-red-600 mb-4 font-semibold">
                   These rules are designed to create a safe, supportive environment for all residents. 
                   Violations will result in immediate consequences as outlined above.
                 </p>
-                <p className="text-cyan-700 font-medium">
+                <p className="text-black font-semibold">
                   By applying to Sunshine Sober Living, you acknowledge that you have read, 
                   understood, and agree to follow all house rules.
                 </p>
@@ -425,8 +431,8 @@ const HowItWorks = () => {
       <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -436,7 +442,7 @@ const HowItWorks = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-balance text-gray-800">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-8 text-balance text-gray-900">
                   House Structure & Expectations
                 </h2>
                 
@@ -446,11 +452,11 @@ const HowItWorks = () => {
                       <FaUsers className="w-4 h-4 text-cyan-700" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-cyan-800 mb-2 flex items-center">
+                      <h3 className="text-lg font-black text-cyan-900 mb-2 flex items-center">
                         <FaTree className="w-4 h-4 mr-2 text-emerald-600" />
                         Community Living
                       </h3>
-                      <p className="text-cyan-700 font-medium">Shared responsibilities, mutual support, and respect for all residents and staff.</p>
+                      <p className="text-black font-semibold">Shared responsibilities, mutual support, and respect for all residents and staff.</p>
                     </div>
                   </div>
                   
@@ -459,11 +465,11 @@ const HowItWorks = () => {
                       <FaClock className="w-4 h-4 text-emerald-700" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-emerald-800 mb-2 flex items-center">
+                      <h3 className="text-lg font-black text-emerald-800 mb-2 flex items-center">
                         <FaLeaf className="w-4 h-4 mr-2 text-emerald-600" />
                         Structured Environment
                       </h3>
-                      <p className="text-emerald-700 font-medium">Clear house rules, curfews, and guidelines designed to support your recovery and personal growth.</p>
+                      <p className="text-black font-semibold">Clear house rules, curfews, and guidelines designed to support your recovery and personal growth.</p>
                     </div>
                   </div>
                   
@@ -472,11 +478,11 @@ const HowItWorks = () => {
                       <FaArrowRight className="w-4 h-4 text-purple-700" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-purple-800 mb-2 flex items-center">
+                      <h3 className="text-lg font-black text-purple-800 mb-2 flex items-center">
                         <FaSeedling className="w-4 h-4 mr-2 text-emerald-600" />
                         Personal Development
                       </h3>
-                      <p className="text-purple-700 font-medium">Encouraged to engage in work, recovery meetings, or educational pursuits while maintaining sobriety.</p>
+                      <p className="text-black font-semibold">Encouraged to engage in work, recovery meetings, or educational pursuits while maintaining sobriety.</p>
                     </div>
                   </div>
                 </div>
@@ -488,11 +494,11 @@ const HowItWorks = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-white/10 rounded-3xl"></div>
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-6 flex items-center">
+                <h3 className="text-2xl font-black mb-6 flex items-center">
                   <FaStar className="w-6 h-6 mr-2" />
                   Ready to Get Started?
                 </h3>
-                <p className="text-cyan-100 mb-6 font-medium">
+                <p className="text-white mb-6 font-semibold">
                   Join our supportive community and begin your journey to lasting recovery. 
                   No fixed timeline—stay as long as you need while actively participating and staying clean.
                 </p>
@@ -514,8 +520,8 @@ const HowItWorks = () => {
       <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-16">
@@ -525,10 +531,10 @@ const HowItWorks = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance text-gray-800">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 text-balance text-gray-900">
                   Important Documents
                 </h2>
-                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                <p className="text-lg text-black max-w-3xl mx-auto font-semibold">
                   Download or view our house rules and intake form to better understand our program requirements.
                 </p>
               </div>
@@ -546,8 +552,8 @@ const HowItWorks = () => {
                 <div className="w-16 h-16 bg-red-100/90 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm shadow-lg">
                   <FaExclamationTriangle className="w-8 h-8 text-red-600" />
                 </div>
-                <h3 className="text-xl font-bold text-cyan-800 mb-4">House Rules</h3>
-                <p className="text-cyan-700 mb-6 font-medium">
+                <h3 className="text-xl font-black text-cyan-900 mb-4">House Rules</h3>
+                <p className="text-black mb-6 font-semibold">
                   Complete detailed house rules and policies that all residents must follow.
                 </p>
                 <a 
@@ -573,8 +579,8 @@ const HowItWorks = () => {
                 <div className="w-16 h-16 bg-cyan-100/90 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm shadow-lg">
                   <FaClipboardCheck className="w-8 h-8 text-cyan-600" />
                 </div>
-                <h3 className="text-xl font-bold text-cyan-800 mb-4">Intake Form</h3>
-                <p className="text-cyan-700 mb-6 font-medium">
+                <h3 className="text-xl font-black text-cyan-900 mb-4">Intake Form</h3>
+                <p className="text-black mb-6 font-semibold">
                   Application form for new residents interested in joining our sober living program.
                 </p>
                 <a 
@@ -597,14 +603,14 @@ const HowItWorks = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-white/10 rounded-2xl"></div>
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-cyan-700 mb-4 flex items-center justify-center">
+                <h3 className="text-2xl font-black text-cyan-900 mb-4 flex items-center justify-center">
                   <FaStar className="w-6 h-6 mr-2" />
                   📋 Document Information
                 </h3>
-                <p className="text-cyan-600 mb-4 font-medium">
+                <p className="text-cyan-600 mb-4 font-semibold">
                   These documents will open in a new browser tab. You can view them online or download them for your records.
                 </p>
-                <p className="text-cyan-700 font-medium">
+                <p className="text-black font-semibold">
                   Please review the house rules carefully before applying, and ensure you can commit to following all guidelines.
                 </p>
               </div>

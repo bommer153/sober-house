@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { Mail, Phone, User, MessageSquare, Calendar, Shield } from 'lucide-react';
+import { Mail, Phone, User, MessageSquare, Shield } from 'lucide-react';
+import { useForm, ValidationError } from '@formspree/react';
+import { FORMSPREE_CONFIG } from '../config/formspree';
 import Button from './Button';
 
 function ContactForm({ onSubmit, className = '' }) {
@@ -16,8 +18,7 @@ function ContactForm({ onSubmit, className = '' }) {
   });
 
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [state, handleFormspreeSubmit] = useForm(FORMSPREE_CONFIG.FORM_ID);
 
   const validateForm = () => {
     const newErrors = {};
@@ -65,50 +66,22 @@ function ContactForm({ onSubmit, className = '' }) {
       return;
     }
 
-    setIsSubmitting(true);
-    setSubmitStatus('submitting');
-
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Track form submission
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'form_submit', {
-          event_category: 'contact',
-          event_label: 'contact_form',
-          value: 1
-        });
-      }
-
-      setSubmitStatus('success');
-      
-      // Reset form
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        preferredContact: 'email',
-        urgency: 'standard',
-        message: '',
-        agreeToTerms: false,
-        newsletter: false
+    // Track form submission
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'form_submit', {
+        event_category: 'contact',
+        event_label: 'contact_form',
+        value: 1
       });
-
-      // Call parent onSubmit if provided
-      if (onSubmit) {
-        onSubmit(formData);
-      }
-
-      // Reset status after 5 seconds
-      setTimeout(() => setSubmitStatus(null), 5000);
-    } catch (error) {
-      setSubmitStatus('error');
-      console.error('Form submission error:', error);
-    } finally {
-      setIsSubmitting(false);
     }
+
+    // Call parent onSubmit if provided
+    if (onSubmit) {
+      onSubmit(formData);
+    }
+
+    // Use Formspree's handleSubmit
+    return handleFormspreeSubmit(e);
   };
 
   const urgencyOptions = [
@@ -120,27 +93,27 @@ function ContactForm({ onSubmit, className = '' }) {
 
   return (
     <div className={`bg-white rounded-2xl shadow-xl p-8 ${className}`}>
-      {/* Success Message */}
-      {submitStatus === 'success' && (
-        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center">
-          <Shield className="w-5 h-5 text-green-600 mr-3" />
-          <div>
-            <h3 className="font-semibold text-green-800">Thank you for your message!</h3>
-            <p className="text-sm text-green-700">We'll get back to you within 24 hours.</p>
-          </div>
-        </div>
-      )}
+             {/* Success Message */}
+       {state.succeeded && (
+         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center">
+           <Shield className="w-5 h-5 text-green-600 mr-3" />
+           <div>
+             <h3 className="font-semibold text-green-800">Thank you for your message!</h3>
+             <p className="text-sm text-green-700">We'll get back to you within 24 hours.</p>
+           </div>
+         </div>
+       )}
 
-      {/* Error Message */}
-      {submitStatus === 'error' && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center">
-          <Shield className="w-5 h-5 text-red-600 mr-3" />
-          <div>
-            <h3 className="font-semibold text-red-800">Something went wrong</h3>
-            <p className="text-sm text-red-700">Please try again or contact us directly.</p>
-          </div>
-        </div>
-      )}
+       {/* Error Message */}
+       {state.errors && state.errors.length > 0 && (
+         <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center">
+           <Shield className="w-5 h-5 text-red-600 mr-3" />
+           <div>
+             <h3 className="font-semibold text-red-800">Something went wrong</h3>
+             <p className="text-sm text-red-700">Please try again or contact us directly.</p>
+           </div>
+         </div>
+       )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Name Fields */}
@@ -346,23 +319,33 @@ function ContactForm({ onSubmit, className = '' }) {
           </div>
         </div>
 
-        {/* Submit Button */}
-        <Button
-          type="submit"
-          variant="primary"
-          size="lg"
-          loading={isSubmitting}
-          className="w-full"
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? 'Sending Message...' : 'Send Message'}
-        </Button>
+                 {/* Submit Button */}
+         <Button
+           type="submit"
+           variant="primary"
+           size="lg"
+           loading={state.submitting}
+           className="w-full"
+           disabled={state.submitting}
+         >
+           {state.submitting ? 'Sending Message...' : 'Send Message'}
+         </Button>
 
-        {/* Privacy Notice */}
-        <p className="text-xs text-gray-500 text-center">
-          Your information is secure and will only be used to contact you about our services.
-          We never share your personal information with third parties.
-        </p>
+                 {/* Hidden fields for Formspree */}
+         <input type="hidden" name="name" value={`${formData.firstName} ${formData.lastName}`} />
+         <input type="hidden" name="phone" value={formData.phone || 'Not provided'} />
+         <input type="hidden" name="preferredContact" value={formData.preferredContact} />
+         <input type="hidden" name="urgencyLevel" value={formData.urgency} />
+         <input type="hidden" name="newsletterSubscription" value={formData.newsletter ? 'Yes' : 'No'} />
+         <input type="hidden" name="_subject" value={`${FORMSPREE_CONFIG.SUBJECT_PREFIX} - ${formData.firstName} ${formData.lastName}`} />
+         <input type="hidden" name="_replyto" value={formData.email} />
+         <input type="hidden" name="_to" value={FORMSPREE_CONFIG.TO_EMAIL} />
+
+         {/* Privacy Notice */}
+         <p className="text-xs text-gray-500 text-center">
+           Your information is secure and will only be used to contact you about our services.
+           We never share your personal information with third parties.
+         </p>
       </form>
     </div>
   );

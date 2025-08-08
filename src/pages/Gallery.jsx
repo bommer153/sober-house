@@ -95,8 +95,8 @@ const Gallery = () => {
       <section className="relative bg-cover bg-center bg-no-repeat text-white h-screen flex items-center justify-center overflow-hidden" style={{
         backgroundImage: `url('/assets/Gallery SSL 2.jpg')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/70 via-emerald-500/50 to-orange-400/60"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/40 via-blue-500/30 to-green-400/20"></div>
         
         {/* Floating tropical elements */}
         <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-400/30 rounded-full animate-bounce"></div>
@@ -116,25 +116,25 @@ const Gallery = () => {
               <div className="relative z-10 flex items-center">
                 <FaLeaf className="w-5 h-5 mr-3 text-emerald-600 animate-pulse" />
                 <FaTree className="w-4 h-4 mr-2 text-emerald-500" />
-                <span className="text-sm font-bold text-gray-900" style={{
+                <span className="text-sm font-black text-blue-800" style={{
                   textShadow: '0 1px 2px rgba(255, 255, 255, 0.9)',
                   fontFamily: 'Source Sans Pro, sans-serif',
-                  fontWeight: '700',
+                  fontWeight: '900',
                   letterSpacing: '0.05em'
                 }}>Trusted by 500+ individuals in recovery</span>
               </div>
             </div>
             
             {/* Main Heading */}
-            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
-              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
+              textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
               fontFamily: 'Playfair Display, serif',
-              fontWeight: '800'
+              fontWeight: '900'
             }}>
               Take a Tour of
               <span className="block" style={{
-                color: '#FFD700',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+                color: '#EAB308',
+                textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
                 fontWeight: '900'
               }}>
                 Sunshine Sober Living
@@ -149,8 +149,8 @@ const Gallery = () => {
       <section className="py-20 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -160,10 +160,10 @@ const Gallery = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
                   Our Living Spaces
                 </h2>
-                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                <p className="text-lg text-black max-w-3xl mx-auto font-semibold">
                   Clean, comfortable, and supportive environments designed to help you focus on your recovery journey.
                 </p>
               </div>
@@ -202,8 +202,8 @@ const Gallery = () => {
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="font-semibold text-cyan-800 mb-2">{image.title}</h3>
-                    <p className="text-cyan-700 text-sm font-medium">{image.description}</p>
+                    <h3 className="font-black text-cyan-900 mb-2">{image.title}</h3>
+                    <p className="text-black text-sm font-semibold">{image.description}</p>
                   </div>
                 </div>
               </div>
@@ -218,7 +218,7 @@ const Gallery = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">
+                <h3 className="text-2xl font-black text-gray-900 mb-6">
                   What You'll Find at Sunshine Sober Living
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6 text-left">
@@ -226,11 +226,11 @@ const Gallery = () => {
                     <div className="w-12 h-12 bg-gradient-to-br from-cyan-100/90 to-emerald-100/90 rounded-xl flex items-center justify-center mx-auto mb-3 backdrop-blur-sm shadow-lg">
                       <FaHome className="w-6 h-6 text-cyan-700" />
                     </div>
-                    <h4 className="font-semibold text-cyan-800 mb-2 flex items-center justify-center">
+                    <h4 className="font-black text-cyan-900 mb-2 flex items-center justify-center">
                       <FaTree className="w-4 h-4 mr-2 text-emerald-600" />
                       🏠 Fully Furnished
                     </h4>
-                    <p className="text-cyan-700 text-sm font-medium">
+                    <p className="text-black text-sm font-semibold">
                       Comfortable living spaces with all the essentials you need for daily life.
                     </p>
                   </div>
@@ -238,11 +238,11 @@ const Gallery = () => {
                     <div className="w-12 h-12 bg-gradient-to-br from-emerald-100/90 to-cyan-100/90 rounded-xl flex items-center justify-center mx-auto mb-3 backdrop-blur-sm shadow-lg">
                       <FaLeaf className="w-6 h-6 text-emerald-700" />
                     </div>
-                    <h4 className="font-semibold text-emerald-800 mb-2 flex items-center justify-center">
+                    <h4 className="font-black text-emerald-900 mb-2 flex items-center justify-center">
                       <FaSeedling className="w-4 h-4 mr-2 text-emerald-600" />
                       🧹 Clean & Organized
                     </h4>
-                    <p className="text-emerald-700 text-sm font-medium">
+                    <p className="text-black text-sm font-semibold">
                       Well-maintained homes that provide a peaceful environment for recovery.
                     </p>
                   </div>
@@ -250,11 +250,11 @@ const Gallery = () => {
                     <div className="w-12 h-12 bg-gradient-to-br from-orange-100/90 to-cyan-100/90 rounded-xl flex items-center justify-center mx-auto mb-3 backdrop-blur-sm shadow-lg">
                       <FaWater className="w-6 h-6 text-orange-700" />
                     </div>
-                    <h4 className="font-semibold text-orange-800 mb-2 flex items-center justify-center">
+                    <h4 className="font-black text-orange-900 mb-2 flex items-center justify-center">
                       <FaSun className="w-4 h-4 mr-2 text-orange-600" />
                       🤝 Supportive Community
                     </h4>
-                    <p className="text-orange-700 text-sm font-medium">
+                    <p className="text-black text-sm font-semibold">
                       Spaces designed to foster connection and mutual support among residents.
                     </p>
                   </div>
@@ -317,23 +317,23 @@ const Gallery = () => {
 
       {/* Call to Action */}
       <section className="py-20 text-white relative overflow-hidden" style={{
-        background: 'linear-gradient(135deg, #06b6d4 0%, #10b981 50%, #f59e0b 100%)'
+        background: 'linear-gradient(135deg, #22c55e 0%, #3b82f6 50%, #16a34a 100%)'
       }}>
         {/* Floating elements */}
         <div className="absolute top-10 right-10 w-16 h-16 bg-white/10 rounded-full animate-bounce"></div>
         <div className="absolute bottom-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-black mb-6">
             Ready to See It in Person?
           </h2>
-          <p className="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-white mb-8 max-w-3xl mx-auto font-semibold">
             Schedule a tour of our facilities and see for yourself how Sunshine Sober Living can support your recovery journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/contact" 
-              className="bg-gradient-to-r from-orange-500 to-rose-500 text-white px-6 py-3 rounded-full font-semibold hover:from-orange-600 hover:to-rose-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <span className="flex items-center justify-center">
                 <FaHome className="w-5 h-5 mr-2" />
@@ -343,7 +343,7 @@ const Gallery = () => {
             </Link>
             <Link 
               to="/contact" 
-              className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-cyan-600 transition-all duration-300 transform hover:scale-105"
+              className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-green-600 transition-all duration-300 transform hover:scale-105"
             >
               <span className="flex items-center justify-center">
                 <FaLeaf className="w-5 h-5 mr-2" />

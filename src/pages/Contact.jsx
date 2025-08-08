@@ -18,8 +18,8 @@ const Contact = () => {
       <section className="relative bg-cover bg-center bg-no-repeat text-white h-screen flex items-center justify-center overflow-hidden" style={{
         backgroundImage: `url('/assets/Gallery_SSL_1.jpg')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/70 via-emerald-500/50 to-orange-400/60"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/40 via-blue-500/30 to-green-400/20"></div>
         
         {/* Floating tropical elements */}
         <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-400/30 rounded-full animate-bounce"></div>
@@ -39,20 +39,20 @@ const Contact = () => {
               <div className="relative z-10 flex items-center">
                 <FaLeaf className="w-5 h-5 mr-3 text-emerald-600 animate-pulse" />
                 <FaTree className="w-4 h-4 mr-2 text-emerald-500" />
-                <span className="text-sm font-semibold text-cyan-800">Get in Touch</span>
+                <span className="text-sm font-black text-blue-800">Get in Touch</span>
               </div>
             </div>
             
             {/* Main Heading */}
-            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
-              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
+              textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
               fontFamily: 'Playfair Display, serif',
-              fontWeight: '800'
+              fontWeight: '900'
             }}>
               Get in Touch
               <span className="block" style={{
-                color: '#FFD700',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+                color: '#EAB308',
+                textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
                 fontWeight: '900'
               }}>
                 Start Your Journey
@@ -60,10 +60,10 @@ const Contact = () => {
             </h1>
             
             {/* Subheading */}
-            <p className={`text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 font-semibold transition-all duration-1000 delay-500 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
-              textShadow: '1px 1px 3px rgba(0, 0, 0, 0.9)',
+            <p className={`text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 font-bold transition-all duration-1000 delay-500 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.95)',
               fontFamily: 'Inter, sans-serif',
-              fontWeight: '600',
+              fontWeight: '700',
               letterSpacing: '0.025em'
             }}>
               Ready to take the first step towards recovery? Contact us today to learn more about our supportive sober living environment and begin your journey to lasting sobriety.
@@ -77,8 +77,8 @@ const Contact = () => {
       <section className="py-20 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -88,10 +88,10 @@ const Contact = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
                   Get in Touch
                 </h2>
-                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                <p className="text-lg text-black max-w-3xl mx-auto font-semibold">
                   We're here to help you start your recovery journey. Contact us today to learn more about our program.
                 </p>
               </div>
@@ -106,7 +106,7 @@ const Contact = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center">
                   <FaTree className="w-6 h-6 mr-2 text-emerald-600" />
                   Send us a Message
                 </h3>
@@ -122,7 +122,7 @@ const Contact = () => {
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                  <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center">
                     <FaLeaf className="w-6 h-6 mr-2 text-emerald-600" />
                     Contact Information
                   </h3>
@@ -132,12 +132,12 @@ const Contact = () => {
                         <FaPhone className="w-6 h-6 text-cyan-700" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-cyan-800 flex items-center">
+                        <h4 className="font-black text-cyan-900 flex items-center">
                           <FaTree className="w-4 h-4 mr-2 text-emerald-600" />
                           Phone
                         </h4>
-                        <p className="text-cyan-700 font-medium">(555) 123-4567</p>
-                        <p className="text-cyan-700 text-sm font-medium">Available 24/7</p>
+                        <p className="text-black font-semibold">(555) 123-4567</p>
+                        <p className="text-black text-sm font-semibold">Available 24/7</p>
                       </div>
                     </div>
                     
@@ -146,12 +146,12 @@ const Contact = () => {
                         <FaEnvelope className="w-6 h-6 text-emerald-700" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-emerald-800 flex items-center">
+                        <h4 className="font-black text-emerald-900 flex items-center">
                           <FaSeedling className="w-4 h-4 mr-2 text-emerald-600" />
                           Email
                         </h4>
-                        <p className="text-emerald-700 font-medium">info@sunshinesoberliving.com</p>
-                        <p className="text-emerald-700 text-sm font-medium">Response within 24 hours</p>
+                        <p className="text-black font-semibold">info@sunshinesoberliving.com</p>
+                        <p className="text-black text-sm font-semibold">Response within 24 hours</p>
                       </div>
                     </div>
                     
@@ -160,12 +160,12 @@ const Contact = () => {
                         <FaMapMarkerAlt className="w-6 h-6 text-orange-700" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-orange-800 flex items-center">
+                        <h4 className="font-black text-orange-900 flex items-center">
                           <FaSun className="w-4 h-4 mr-2 text-orange-600" />
                           Location
                         </h4>
-                        <p className="text-orange-700 font-medium">123 Recovery Street</p>
-                        <p className="text-orange-700 font-medium">Sunshine City, FL 12345</p>
+                        <p className="text-black font-semibold">123 Recovery Street</p>
+                        <p className="text-black font-semibold">Sunshine City, FL 12345</p>
                       </div>
                     </div>
                     
@@ -174,12 +174,12 @@ const Contact = () => {
                         <FaClock className="w-6 h-6 text-cyan-700" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-cyan-800 flex items-center">
+                        <h4 className="font-black text-cyan-900 flex items-center">
                           <FaWater className="w-4 h-4 mr-2 text-cyan-600" />
                           Office Hours
                         </h4>
-                        <p className="text-cyan-700 font-medium">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                        <p className="text-cyan-700 font-medium">Weekends: 10:00 AM - 4:00 PM</p>
+                        <p className="text-black font-semibold">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p className="text-black font-semibold">Weekends: 10:00 AM - 4:00 PM</p>
                       </div>
                     </div>
                   </div>
@@ -192,7 +192,7 @@ const Contact = () => {
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                  <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center">
                     <FaExclamationTriangle className="w-6 h-6 mr-2 text-red-600" />
                     Emergency Contact
                   </h3>
@@ -201,12 +201,12 @@ const Contact = () => {
                       <FaExclamationTriangle className="w-6 h-6 text-red-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-red-700 flex items-center">
+                      <h4 className="font-black text-red-700 flex items-center">
                         <FaTree className="w-4 h-4 mr-2 text-emerald-600" />
                         24/7 Crisis Line
                       </h4>
                       <p className="text-red-600 font-semibold">(555) 999-8888</p>
-                      <p className="text-red-600 text-sm font-medium">For immediate assistance</p>
+                      <p className="text-black text-sm font-semibold">For immediate assistance</p>
                     </div>
                   </div>
                 </div>
@@ -220,8 +220,8 @@ const Contact = () => {
       <section className="py-20 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -231,10 +231,10 @@ const Contact = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
                   Find Us
                 </h2>
-                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                <p className="text-lg text-black max-w-3xl mx-auto font-semibold">
                   Visit our location to see our facilities and meet our team in person.
                 </p>
               </div>
@@ -253,23 +253,23 @@ const Contact = () => {
 
       {/* Call to Action */}
       <section className="py-20 text-white relative overflow-hidden" style={{
-        background: 'linear-gradient(135deg, #06b6d4 0%, #10b981 50%, #f59e0b 100%)'
+        background: 'linear-gradient(135deg, #22c55e 0%, #3b82f6 50%, #16a34a 100%)'
       }}>
         {/* Floating elements */}
         <div className="absolute top-10 right-10 w-16 h-16 bg-white/10 rounded-full animate-bounce"></div>
         <div className="absolute bottom-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-black mb-6">
             Ready to Take the Next Step?
           </h2>
-          <p className="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-white mb-8 max-w-3xl mx-auto font-semibold">
             Don't wait to start your recovery journey. Contact us today and take the first step towards a brighter future.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="#contact-form" 
-              className="bg-gradient-to-r from-orange-500 to-rose-500 text-white px-6 py-3 rounded-full font-semibold hover:from-orange-600 hover:to-rose-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <span className="flex items-center justify-center">
                 <FaHome className="w-5 h-5 mr-2" />
@@ -279,7 +279,7 @@ const Contact = () => {
             </Link>
             <Link 
               to="#contact-info" 
-              className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-cyan-600 transition-all duration-300 transform hover:scale-105"
+              className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-green-600 transition-all duration-300 transform hover:scale-105"
             >
               <span className="flex items-center justify-center">
                 <FaLeaf className="w-5 h-5 mr-2" />

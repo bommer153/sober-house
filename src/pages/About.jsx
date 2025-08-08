@@ -15,8 +15,8 @@ function About() {
       <section className="relative bg-cover bg-center bg-no-repeat text-white h-screen flex items-center justify-center overflow-hidden" style={{
         backgroundImage: `url('/assets/resort.jpg')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/70 via-emerald-500/50 to-orange-400/60"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/40 via-blue-500/30 to-green-400/20"></div>
         
         {/* Floating tropical elements */}
         <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-400/30 rounded-full animate-bounce"></div>
@@ -36,20 +36,20 @@ function About() {
               <div className="relative z-10 flex items-center">
                 <FaLeaf className="w-5 h-5 mr-3 text-emerald-600 animate-pulse" />
                 <FaTree className="w-4 h-4 mr-2 text-emerald-500" />
-                <span className="text-sm font-semibold text-cyan-800">About Sunshine Sober Living</span>
+                <span className="text-sm font-black text-blue-800">About Sunshine Sober Living</span>
               </div>
             </div>
             
             {/* Main Heading */}
-            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
-              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
+              textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
               fontFamily: 'Playfair Display, serif',
-              fontWeight: '800'
+              fontWeight: '900'
             }}>
               We don't just recover—
               <span className="block" style={{
-                color: '#FFD700',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+                color: '#EAB308',
+                textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
                 fontWeight: '900'
               }}>
                 we shine brighter every day
@@ -57,10 +57,10 @@ function About() {
             </h1>
             
             {/* Subheading */}
-            <p className={`text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 font-semibold transition-all duration-1000 delay-500 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
-              textShadow: '1px 1px 3px rgba(0, 0, 0, 0.9)',
+            <p className={`text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 font-bold transition-all duration-1000 delay-500 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.95)',
               fontFamily: 'Inter, sans-serif',
-              fontWeight: '600',
+              fontWeight: '700',
               letterSpacing: '0.025em'
             }}>
               Grounded in our S.U.N.S.H.I.N.E. values: Stability, Unity, Nurture, Self-Accountability, Hope, Integrity, New Beginnings, and Empowerment.
@@ -73,8 +73,8 @@ function About() {
       <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-16">
@@ -84,10 +84,10 @@ function About() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance text-gray-800">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 text-balance text-gray-900">
                   Our Mission & Vision
                 </h2>
-                <p className="text-lg text-cyan-700 max-w-3xl mx-auto font-medium">
+                <p className="text-lg text-blue-800 max-w-3xl mx-auto font-semibold">
                   Creating a bright, stable space where individuals healing from addiction can rediscover themselves and rebuild their future.
                 </p>
               </div>
@@ -102,15 +102,15 @@ function About() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-balance text-gray-800">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-8 text-balance text-gray-900">
                   Our Mission
                 </h2>
-                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-cyan-700">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-blue-800">
                   Creating a Bright,<br />
                   Stable Space
                 </h3>
                 
-                <p className="text-lg text-cyan-700 mb-8 leading-relaxed font-medium">
+                <p className="text-lg text-black mb-8 leading-relaxed font-semibold">
                   To create a bright, stable space where individuals healing from addiction can rediscover themselves, rebuild their future, and rise together—guided by structure, self-respect, and the shared belief that everyone deserves a fresh start in the sun.
                 </p>
 
@@ -120,11 +120,11 @@ function About() {
                       <FaUsers className="w-6 h-6 text-cyan-700" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-cyan-800 mb-2 flex items-center">
-                        <FaTree className="w-4 h-4 mr-2 text-emerald-600" />
+                      <h4 className="text-xl font-black text-blue-900 mb-2 flex items-center">
+                        <FaTree className="w-4 h-4 mr-2 text-green-600" />
                         Community Support
                       </h4>
-                      <p className="text-cyan-700 font-medium">
+                      <p className="text-black font-semibold">
                         Building strong connections and mutual support among residents and staff.
                       </p>
                     </div>
@@ -135,11 +135,11 @@ function About() {
                       <FaShieldAlt className="w-6 h-6 text-emerald-700" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-emerald-800 mb-2 flex items-center">
-                        <FaLeaf className="w-4 h-4 mr-2 text-emerald-600" />
+                      <h4 className="text-xl font-black text-green-900 mb-2 flex items-center">
+                        <FaLeaf className="w-4 h-4 mr-2 text-green-600" />
                         Structured Environment
                       </h4>
-                      <p className="text-emerald-700 font-medium">
+                      <p className="text-black font-semibold">
                         Safe, drug-free living spaces with clear rules and guidelines to support recovery.
                       </p>
                     </div>
@@ -150,11 +150,11 @@ function About() {
                       <FaHeart className="w-6 h-6 text-orange-700" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-orange-800 mb-2 flex items-center">
-                        <FaSeedling className="w-4 h-4 mr-2 text-emerald-600" />
+                      <h4 className="text-xl font-black text-yellow-900 mb-2 flex items-center">
+                        <FaSeedling className="w-4 h-4 mr-2 text-green-600" />
                         Personal Growth
                       </h4>
-                      <p className="text-orange-700 font-medium">
+                      <p className="text-black font-semibold">
                         Opportunities to develop life skills, build healthy habits, and create lasting change.
                       </p>
                     </div>
@@ -170,15 +170,15 @@ function About() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-balance text-gray-800">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-8 text-balance text-gray-900">
                   Our Vision
                 </h2>
-                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-emerald-700">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-green-800">
                   A Thriving Recovery<br />
                   Community
                 </h3>
                 
-                <p className="text-lg text-emerald-700 mb-8 leading-relaxed font-medium">
+                <p className="text-lg text-black mb-8 leading-relaxed font-semibold">
                   We envision a thriving recovery community across Florida where sober living isn't just about staying clean, it's about living fully, freely, and with purpose. Sunshine Sober Living will be known as a safe haven of hope, heart, and healing where transformation happens through consistency, connection, and courage.
                 </p>
 
@@ -222,8 +222,8 @@ function About() {
       <section className="py-24 lg:py-32 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
         backgroundImage: `url('/assets/palm3.gif')`
       }}>
-        {/* Tropical overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/40 via-cyan-500/35 to-orange-400/40"></div>
+        {/* Hope and Healing overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-16">
@@ -233,14 +233,14 @@ function About() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance text-gray-800">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 text-balance text-gray-900">
                   S.U.N.S.H.I.N.E. Core Values
                 </h2>
-                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-orange-600">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-blue-800">
                   "We don't just recover—<br />
                   we shine brighter every day."
                 </h3>
-                <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-cyan-700 font-medium">
+                <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-black font-semibold">
                   These core values guide everything we do and shape the supportive environment we create for our residents.
                 </p>
               </div>
@@ -255,12 +255,12 @@ function About() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <div className="text-4xl font-bold text-cyan-700 mb-4 flex items-center justify-center">
+                <div className="text-4xl font-black text-cyan-700 mb-4 flex items-center justify-center">
                   <FaTree className="w-8 h-8 mr-2" />
                   S
                 </div>
-                <h3 className="text-xl font-bold text-cyan-800 mb-3">Stability</h3>
-                <p className="text-cyan-700 text-sm font-medium">
+                <h3 className="text-xl font-black text-cyan-800 mb-3">Stability</h3>
+                <p className="text-black text-sm font-semibold">
                   We provide a safe, dependable environment where structure supports progress. Stability is the foundation of lasting change.
                 </p>
               </div>
@@ -273,12 +273,12 @@ function About() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <div className="text-4xl font-bold text-emerald-700 mb-4 flex items-center justify-center">
+                <div className="text-4xl font-black text-emerald-700 mb-4 flex items-center justify-center">
                   <FaUsers className="w-8 h-8 mr-2" />
                   U
                 </div>
-                <h3 className="text-xl font-bold text-emerald-800 mb-3">Unity</h3>
-                <p className="text-emerald-700 text-sm font-medium">
+                <h3 className="text-xl font-black text-emerald-800 mb-3">Unity</h3>
+                <p className="text-black text-sm font-semibold">
                   We grow stronger together. Our community thrives on teamwork, shared goals, and mutual support—no one gets left behind.
                 </p>
               </div>
@@ -291,12 +291,12 @@ function About() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <div className="text-4xl font-bold text-rose-700 mb-4 flex items-center justify-center">
+                <div className="text-4xl font-black text-rose-700 mb-4 flex items-center justify-center">
                   <FaHeart className="w-8 h-8 mr-2" />
                   N
                 </div>
-                <h3 className="text-xl font-bold text-rose-800 mb-3">Nurture</h3>
-                <p className="text-rose-700 text-sm font-medium">
+                <h3 className="text-xl font-black text-rose-800 mb-3">Nurture</h3>
+                <p className="text-black text-sm font-semibold">
                   We create a home filled with compassion and encouragement. Healing happens in spaces where people feel valued, seen, and cared for.
                 </p>
               </div>
@@ -309,12 +309,12 @@ function About() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <div className="text-4xl font-bold text-purple-700 mb-4 flex items-center justify-center">
+                <div className="text-4xl font-black text-purple-700 mb-4 flex items-center justify-center">
                   <FaShieldAlt className="w-8 h-8 mr-2" />
                   S
                 </div>
-                <h3 className="text-xl font-bold text-purple-800 mb-3">Self-Accountability</h3>
-                <p className="text-purple-700 text-sm font-medium">
+                <h3 className="text-xl font-black text-purple-800 mb-3">Self-Accountability</h3>
+                <p className="text-black text-sm font-semibold">
                   We own our actions and choices. Personal responsibility empowers us to grow with integrity and self-respect.
                 </p>
               </div>
@@ -327,12 +327,12 @@ function About() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <div className="text-4xl font-bold text-yellow-700 mb-4 flex items-center justify-center">
+                <div className="text-4xl font-black text-yellow-700 mb-4 flex items-center justify-center">
                   <FaSun className="w-8 h-8 mr-2" />
                   H
                 </div>
-                <h3 className="text-xl font-bold text-yellow-800 mb-3">Hope</h3>
-                <p className="text-yellow-700 text-sm font-medium">
+                <h3 className="text-xl font-black text-yellow-800 mb-3">Hope</h3>
+                <p className="text-black text-sm font-semibold">
                   We believe that no past defines the future. Hope fuels our journey and reminds us that brighter days are always within reach.
                 </p>
               </div>
@@ -345,12 +345,12 @@ function About() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <div className="text-4xl font-bold text-indigo-700 mb-4 flex items-center justify-center">
+                <div className="text-4xl font-black text-indigo-700 mb-4 flex items-center justify-center">
                   <FaAward className="w-8 h-8 mr-2" />
                   I
                 </div>
-                <h3 className="text-xl font-bold text-indigo-800 mb-3">Integrity</h3>
-                <p className="text-indigo-700 text-sm font-medium">
+                <h3 className="text-xl font-black text-indigo-800 mb-3">Integrity</h3>
+                <p className="text-black text-sm font-semibold">
                   We live with honesty and treat others with fairness and respect. Trust is earned and kept through consistent, truthful action.
                 </p>
               </div>
@@ -363,12 +363,12 @@ function About() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <div className="text-4xl font-bold text-emerald-700 mb-4 flex items-center justify-center">
+                <div className="text-4xl font-black text-emerald-700 mb-4 flex items-center justify-center">
                   <FaSeedling className="w-8 h-8 mr-2" />
                   N
                 </div>
-                <h3 className="text-xl font-bold text-emerald-800 mb-3">New Beginnings</h3>
-                <p className="text-emerald-700 text-sm font-medium">
+                <h3 className="text-xl font-black text-emerald-800 mb-3">New Beginnings</h3>
+                <p className="text-black text-sm font-semibold">
                   Every day is a chance to start again. We embrace fresh starts with open hearts and a willingness to change.
                 </p>
               </div>
@@ -381,12 +381,12 @@ function About() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
               <div className="relative z-10">
-                <div className="text-4xl font-bold text-orange-700 mb-4 flex items-center justify-center">
+                <div className="text-4xl font-black text-orange-700 mb-4 flex items-center justify-center">
                   <FaStar className="w-8 h-8 mr-2" />
                   E
                 </div>
-                <h3 className="text-xl font-bold text-orange-800 mb-3">Empowerment</h3>
-                <p className="text-orange-700 text-sm font-medium">
+                <h3 className="text-xl font-black text-orange-800 mb-3">Empowerment</h3>
+                <p className="text-black text-sm font-semibold">
                   We equip every resident with the tools, confidence, and support to build a life they're proud of—one sober step at a time.
                 </p>
               </div>
@@ -397,23 +397,23 @@ function About() {
 
       {/* Call to Action */}
       <section className="py-20 text-white relative overflow-hidden" style={{
-        background: 'linear-gradient(135deg, #06b6d4 0%, #10b981 50%, #f59e0b 100%)'
+        background: 'linear-gradient(135deg, #22c55e 0%, #3b82f6 50%, #16a34a 100%)'
       }}>
         {/* Floating elements */}
         <div className="absolute top-10 right-10 w-16 h-16 bg-white/10 rounded-full animate-bounce"></div>
         <div className="absolute bottom-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-black mb-6">
             Ready to Start Your Recovery Journey?
           </h2>
-          <p className="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-white mb-8 max-w-3xl mx-auto font-semibold">
             Whether you're transitioning from treatment or starting over with a clear mind and a hopeful heart, Sunshine is here to walk with you…. one step, one choice, and one day at a time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/contact" 
-              className="bg-gradient-to-r from-orange-500 to-rose-500 text-white px-6 py-3 rounded-full font-semibold hover:from-orange-600 hover:to-rose-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <span className="flex items-center justify-center">
                 <FaHome className="w-5 h-5 mr-2" />
@@ -423,7 +423,7 @@ function About() {
             </Link>
             <Link 
               to="/how-it-works" 
-              className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-cyan-600 transition-all duration-300 transform hover:scale-105"
+              className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-green-600 transition-all duration-300 transform hover:scale-105"
             >
               <span className="flex items-center justify-center">
                 <FaLeaf className="w-5 h-5 mr-2" />
