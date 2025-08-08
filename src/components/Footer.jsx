@@ -144,13 +144,13 @@ const Footer = () => {
                 <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:from-orange-500 group-hover:to-orange-600 transition-all duration-300">
                   <FaPhone className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-blue-200">Call us for assistance</span>
+                <span className="text-blue-200">727-481-0705</span>
               </li>
               <li className="flex items-center space-x-3 group">
                 <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:from-blue-500 group-hover:to-blue-600 transition-all duration-300">
                   <FaEnvelope className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-blue-200">Send us a message</span>
+                <a href="mailto:kmonroe@irokgroup.com" className="text-blue-200 hover:text-orange-400 transition-all duration-300">kmonroe@irokgroup.com</a>
               </li>
             </ul>
           </div>

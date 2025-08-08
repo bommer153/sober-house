@@ -136,7 +136,7 @@ const Contact = () => {
                           <FaTree className="w-4 h-4 mr-2 text-emerald-600" />
                           Phone
                         </h4>
-                        <p className="text-black font-semibold">(555) 123-4567</p>
+                        <p className="text-black font-semibold">727-481-0705</p>
                         <p className="text-black text-sm font-semibold">Available 24/7</p>
                       </div>
                     </div>
@@ -150,7 +150,7 @@ const Contact = () => {
                           <FaSeedling className="w-4 h-4 mr-2 text-emerald-600" />
                           Email
                         </h4>
-                        <p className="text-black font-semibold">info@sunshinesoberliving.com</p>
+                        <p className="text-black font-semibold">kmonroe@irokgroup.com</p>
                         <p className="text-black text-sm font-semibold">Response within 24 hours</p>
                       </div>
                     </div>
@@ -164,8 +164,8 @@ const Contact = () => {
                           <FaSun className="w-4 h-4 mr-2 text-orange-600" />
                           Location
                         </h4>
-                        <p className="text-black font-semibold">123 Recovery Street</p>
-                        <p className="text-black font-semibold">Sunshine City, FL 12345</p>
+                        <p className="text-black font-semibold">3475 18th Ave South</p>
+                        <p className="text-black font-semibold">St. Petersburg, FL</p>
                       </div>
                     </div>
                     
