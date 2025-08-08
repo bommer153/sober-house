@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 // Import gallery images using Vite's import method
 import gallery1 from '../assets/Gallery_SSL_1.jpg';
 import gallery2 from '../assets/Gallery_SSL_2.jpg';
-import gallery3 from '../assets/Gallery_SSL_3.jpg';
-import gallery4 from '../assets/Gallery_SSL_4.jpg';
+import modernKitchen from '../assets/modern.webp';
+import outdoorSanctuary from '../assets/Gallery_SSL_4.jpg';
+import privatePic from '../assets/private.jpg';
 import gallery5 from '../assets/Gallery_SSL_5.jpg';
-import gallery6 from '../assets/Gallery_SSL_6.jpg';
+import communitySpace from '../assets/Gallery_SSL_6.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -20,41 +21,41 @@ const Gallery = () => {
   }, []);
 
   const galleryImages = [
-    { 
-      src: gallery1, 
+    {
+      src: gallery1,
       alt: 'Sunshine Sober Living - House Exterior',
       title: 'Peaceful Exterior',
-      description: 'Our welcoming home surrounded by tropical landscaping'
+      description: 'A quiet, inviting property that creates an immediate sense of safety and tranquility from the moment you arrive.'
     },
-    { 
-      src: gallery2, 
+    {
+      src: gallery2,
       alt: 'Sunshine Sober Living - Living Room',
       title: 'Comfortable Living Space',
-      description: 'Cozy common areas for relaxation and community building'
+      description: 'A clean, well-maintained, and welcoming home that fosters stability and well-being. Cozy common areas and functional amenities encourage healthy routines and positive connections.'
     },
-    { 
-      src: gallery3, 
+    {
+      src: modernKitchen,
       alt: 'Sunshine Sober Living - Kitchen Area',
       title: 'Modern Kitchen',
       description: 'Fully equipped kitchen for healthy meal preparation'
     },
-    { 
-      src: gallery4, 
+    {
+      src: privatePic,
       alt: 'Sunshine Sober Living - Bedroom',
       title: 'Private Bedroom',
-      description: 'Peaceful sleeping quarters for rest and recovery'
+      description: 'Your own personal retreat for rest, reflection, and privacy, allowing you to recharge and restore your energy each day.'
     },
-    { 
-      src: gallery5, 
+    {
+      src: communitySpace,
       alt: 'Sunshine Sober Living - Common Area',
       title: 'Community Space',
-      description: 'Areas designed for connection and mutual support'
+      description: 'Warm and open shared areas that encourage conversation, fellowship, and peer support, building strong bonds with others on the same journey.'
     },
-    { 
-      src: gallery6, 
+    {
+      src: outdoorSanctuary,
       alt: 'Sunshine Sober Living - Outdoor Space',
       title: 'Outdoor Sanctuary',
-      description: 'Beautiful outdoor spaces for reflection and relaxation'
+      description: 'Serene, landscaped spaces where you can enjoy fresh air, meditate, or simply relax in a calm environment.'
     }
   ];
 
@@ -97,14 +98,14 @@ const Gallery = () => {
       }}>
         {/* Hope and Healing overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-green-500/40 via-blue-500/30 to-green-400/20"></div>
-        
+
         {/* Floating tropical elements */}
         <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-400/30 rounded-full animate-bounce"></div>
         <div className="absolute top-20 right-20 w-16 h-16 bg-orange-400/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-cyan-400/30 rounded-full animate-bounce" style={{ animationDelay: '2s' }}></div>
         <div className="absolute top-1/3 right-1/3 w-14 h-14 bg-yellow-400/30 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
         <div className="absolute bottom-1/3 right-1/4 w-18 h-18 bg-pink-400/30 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }}></div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             {/* Tropical Badge */}
@@ -124,7 +125,7 @@ const Gallery = () => {
                 }}>Trusted by 500+ individuals in recovery</span>
               </div>
             </div>
-            
+
             {/* Main Heading */}
             <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-8 leading-tight text-white transition-all duration-1000 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`} style={{
               textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
@@ -142,7 +143,7 @@ const Gallery = () => {
                 Sunshine Sober Living
               </span>
             </h1>
-           
+
           </div>
         </div>
       </section>
@@ -153,7 +154,7 @@ const Gallery = () => {
       }}>
         {/* Hope and Healing overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-blue-500/20 to-green-400/15"></div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 p-8 relative overflow-hidden mb-8">
@@ -166,7 +167,7 @@ const Gallery = () => {
                   Our Living Spaces
                 </h2>
                 <p className="text-lg text-black max-w-3xl mx-auto font-semibold">
-                  Clean, comfortable, and supportive environments designed to help you focus on your recovery journey.
+                  At Sunshine Sober Living, we offer more than just housing, we provide a safe, supportive, and uplifting home designed to help our residents thrive in recovery. Every corner is thoughtfully created to promote comfort, peace, and personal growth.
                 </p>
               </div>
             </div>
@@ -174,7 +175,7 @@ const Gallery = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {galleryImages.map((image, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/70 overflow-hidden cursor-pointer group transform hover:scale-105 transition-all duration-500 relative"
                 onClick={() => openModal(index)}
@@ -185,8 +186,8 @@ const Gallery = () => {
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
                 <div className="relative z-10">
                   <div className="relative overflow-hidden">
-                    <img 
-                      src={image.src} 
+                    <img
+                      src={image.src}
                       alt={image.alt}
                       className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                       onLoad={() => console.log(`Image ${index + 1} loaded successfully:`, image.src)}
@@ -269,7 +270,7 @@ const Gallery = () => {
 
       {/* Image Modal */}
       {selectedImage && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           onClick={closeModal}
           onKeyDown={handleKeyDown}
@@ -282,22 +283,22 @@ const Gallery = () => {
             >
               <FaTimes className="w-6 h-6" />
             </button>
-            
+
             <div className="relative">
-              <img 
-                src={selectedImage.src} 
+              <img
+                src={selectedImage.src}
                 alt={selectedImage.alt}
                 className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               />
-              
+
               <button
                 onClick={(e) => { e.stopPropagation(); prevImage(); }}
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-cyan-500/80 text-white p-3 rounded-full hover:bg-cyan-600/80 transition-all duration-300 backdrop-blur-sm"
               >
                 <FaChevronLeft className="w-5 h-5" />
               </button>
-              
+
               <button
                 onClick={(e) => { e.stopPropagation(); nextImage(); }}
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-cyan-500/80 text-white p-3 rounded-full hover:bg-cyan-600/80 transition-all duration-300 backdrop-blur-sm"
@@ -305,7 +306,7 @@ const Gallery = () => {
                 <FaChevronRight className="w-5 h-5" />
               </button>
             </div>
-            
+
             <div className="text-center mt-4">
               <h3 className="text-white text-xl font-semibold mb-2">{selectedImage.title}</h3>
               <p className="text-white/80 mb-2">{selectedImage.description}</p>
@@ -324,7 +325,7 @@ const Gallery = () => {
         {/* Floating elements */}
         <div className="absolute top-10 right-10 w-16 h-16 bg-white/10 rounded-full animate-bounce"></div>
         <div className="absolute bottom-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-6">
             Ready to See It in Person?
@@ -333,8 +334,8 @@ const Gallery = () => {
             Schedule a tour of our facilities and see for yourself how Sunshine Sober Living can support your recovery journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <span className="flex items-center justify-center">
@@ -343,8 +344,8 @@ const Gallery = () => {
                 Schedule Tour
               </span>
             </Link>
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-green-600 transition-all duration-300 transform hover:scale-105"
             >
               <span className="flex items-center justify-center">
